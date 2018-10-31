@@ -1,0 +1,240 @@
+<header>
+<h3><%= t("doc_list") %></h3>
+<% admins_only do %>
+<ul class="actions" style="padding-bottom: 5px;">
+  <li>
+    <%= link_to(t("create") + t("blank") + t("doc"),
+    new_admin_doc_path, class: "new") %>
+  </li>
+  <li>
+    <%= link_to("导入" + t("blank") + t("doc"), admin_csv_imports_path,
+     class: "btn btn-primary") %>
+  </li>
+</ul>
+<% end %>
+</header>
+<% if false %>
+<div class="submenu">
+  <div class="btn-group">
+    <%= link_to "#{t('all')} (#{Doc.count})",
+          admin_docs_path(doc_filters(status: nil)),
+          class: "btn btn-success btn-group
+                  #{(params[:status].blank?) ? "active" : "" }" %>
+    <% Doc::STATUS.each do |s| %>
+      <%= link_to t(s, scope: 'doc_.status') + " (#{Doc.by_status(s).count})",
+          admin_docs_path(doc_filters(status: s)),
+          class: "btn btn-success btn-group
+                  #{(params[:status] == s) ? "active" : "" }" %>
+    <% end %>
+  </div>
+  <div class="btn-group">
+    <%= link_to "#{t('all')} (#{Doc.count})",
+          admin_docs_path(doc_filters(journal_id: nil)),
+          class: "btn btn-default btn-group
+            #{(params[:journal_id].blank?) ? "active" : "" }" %>
+    <% Journal.all.each do |j| %>
+      <%= link_to j.name + " (#{Doc.by_journal(j).count})",
+      admin_docs_path(doc_filters(journal_id: j.id)),
+      class: "btn btn-default btn-group
+              #{(params[:journal_id] == j.id.to_s) ? "active" : "" }" %>
+    <% end %>
+  </div>
+</div>
+<% end %>
+<div class="submenu" width="100%">
+<%= search_form_for @q, url: admin_docs_path, method: :get do |f| %>
+<table class="table  table-hover">
+  <tr>
+    <td width="100px">
+      资料名称
+    </td>
+    <td>
+      <%= f.search_field :name_cont, placeholder: "资料名称",
+       class: "form-control" %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      资料描述
+    </td>
+    <td>
+      <%= f.search_field :description_cont, placeholder: "资料描述",
+       class: "form-control" %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      资料序号
+    </td>
+    <td>
+      <%= text_field_tag :doc_id, params[:doc_id],
+        placeholder: "资料序号，可用逗号（ ，）区隔", class: "form-control" %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      刊物名称
+    </td>
+    <td>
+      <% Journal.all.each do |j| %>
+        <%= check_box_tag "journal_ids[]", j.id,
+          Array(params[:journal_ids]).include?(j.id.to_s) %>
+        <%= j.name %>
+        (<%= Doc.by_journal(j).count %>)
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      资料状态
+    </td>
+    <td>
+      <% Doc::STATUS.each do |s| %>
+
+          <%= check_box_tag "statuses[]", s,
+            Array(params[:statuses]).include?(s) %>
+          <%= t(s, scope: "doc_.status")%>
+          (<%= Doc.by_status(s).size %>)
+
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      资料时间
+    </td>
+    <td>
+      <%= date_field_tag :start_on, params[:start_on] %> ~
+      <%= date_field_tag :end_on, params[:end_on] %>
+    </td>
+  </tr>
+  <tr>
+    <td class="text-right" colspan="2">
+      <%= submit_tag "查询", class: "btn btn-primary" %>
+    </td>
+  </tr>
+</table>
+<% end %>
+</div>
+<div id="docs" class="row">
+<%= form_tag bulk_update_admin_docs_path, class: "table" do %>
+<table class="table table-bordered">
+<thead>
+  <tr>
+    <th>
+      <%= check_box_tag "全选", "1", false, id: "toggle_all" %>
+    </th>
+    <th>
+      <%= t("num") %>
+    </th>
+    <th>
+      <%= t("journal") + t("blank") + t("name") %>
+    </th>
+    <th>
+      <%= t("doc") + t("blank") + t("name") %>
+    </th>
+    <th>
+      <%= t("origin") %>
+    </th>
+    <!-- <th>
+      <%= t("receivecount") %>
+    </th> -->
+    <th>
+      <%= t("receive") %>
+    </th>
+    <th>
+      <%= t("operation") %>
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <% @docs.each do |doc| %>
+  <tr>
+    <td>
+      <%= check_box_tag "ids[]", doc.id %>
+    </td>
+    <td>
+      <%= link_to(doc.id, doc_path(doc)) %>
+    </td>
+    <td>
+      <%= doc.journal.name %>
+    </td>
+    <td>
+      <%= link_to doc.name, journal_doc_path(doc.journal, doc) %>
+    </td>
+    <td>
+      <%= link_to doc.origin, journal_doc_path(doc.journal, doc) %>
+    </td>
+    <!-- <td>
+      <%= doc.amount %>
+    </td> -->
+    <td>
+      <%= doc.receive %>
+    </td>
+    <td>
+      <%= link_to t("edit"), edit_admin_doc_path(doc), class: "edit" %>
+      <%= link_to t("delete"), admin_doc_path(doc),
+          method: :delete, data: { confirm: "确定要删除这份资料么？"},
+          class: "delete" %>
+    </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+<%= paginate @docs %>
+<% end %>
+</div>
+
+<p>
+  <%= select_tag :doc_status,
+    options_for_select([[t("available", scope: "doc_.status"), "available"],
+                        [t("lend", scope: "doc_.status"), "lend"]]),
+    class: "form-control", style: "width: 80px; display: inline"%>
+  <%= submit_tag t(:bulk_update), class: "btn btn-primary" %>
+  <%= submit_tag t(:bulk_delete), class: "btn btn-danger",
+    data: { confirm: "你确定要批量删除么？" } %>
+  <%= link_to "导出 CSV", admin_docs_path(format: :csv),
+    class: "btn btn-default" %>
+  <%= link_to "导出 Excel", admin_docs_path(format: :xlsx),
+    class: "btn btn-default" %>
+
+
+<hr />
+<canvas id="chartDate" width="400" height="200"></canvas>
+<hr  />
+<%= form_tag import_admin_docs_path(), multipart: true, class: "inline" do %>
+  <p>
+    <%= file_field_tag "csv_file" %>
+  </p>
+  <p>
+    <%= submit_tag "汇入CSV", class: "btn btn-danger" %>
+  </p>
+<% end %>
+</p>
+
+<script>
+  var ctxDate = document.getElementById("chartDate");
+  var dateChart = new Chart(ctxDate, {
+    type: 'line',
+    data: <%= raw @date_stat.to_json %>,
+    option: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      }
+    }
+  });
+</script>
+
+<script>
+$("#toggle_all").click(function(){
+  if ( $(this).prop("checked") ) {
+    $("input[name='ids[]']").prop("checked", true);
+  } else {
+    $("input[name='ids[]']").prop("checked", false);
+  }
+});
+</script>

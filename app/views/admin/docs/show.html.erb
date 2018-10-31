@@ -1,0 +1,122 @@
+<% title(@doc.name) %>
+<div id="doc">
+  <header>
+      <h4><%= link_to @doc.journal.try(:name), @doc.journal %>
+      <i class="fa fa-caret-right" aria-hidden="true"></i></h4>
+      <h3><%= @doc.name %></h3>
+    <ul class="actions">
+      <% if policy(@doc).update? %>
+      <li>
+        <%= link_to t("edit") + t("blank") + t("doc"),
+          edit_admin_doc_path(@doc), class: "edit" %>
+      </li>
+      <% end %>
+      <% if policy(@doc).destroy? %>
+      <li>
+        <%= link_to t("delete") + t("blank") + t("doc"),
+          admin_docs_path,
+          method: :delete,
+          data: { confirm: "确定要删除这份资料么？"}, class: "delete" %>
+      </li>
+      <% end %>
+    </ul>
+  </header>
+  <div class="row">
+    <p>
+      <%= t("doc") + t("blank") + t("num") %>：<%= @doc.id %>
+    </p>
+    <p>
+      <%= t("doc") + t("blank") + t("name") %>：<%= @doc.name %></td>
+    </p>
+    <p>
+      <%= t("publish") %>：<%= @doc.publish %>
+    </p>
+    <p>
+      <%= t("receive") %>：<%= @doc.receive %>
+    </p>
+    <p>
+      <%= t("doc") + t("blank") + t("origin") %>：<%= @doc.origin %>
+    </p>
+    <p>
+      <%= t("doc") + t("blank") + t("receivecount") %>：<%= @doc.amount %>
+    </p>
+
+    <p>
+      <%= t("doc") + t("blank") + t("attach") %>：
+      <% if @doc.attachments.any? %>
+        <div class="attachments">
+          <% @doc.attachments.each do |attachment| %>
+          <p>
+            <% unless attachment.file.url.nil? %>
+            <%= link_to File.basename(attachment.file.url),
+              attachment_path(attachment) %>
+            (<%= number_to_human_size(attachment.file.size) %>)
+            <% end %>
+          </p>
+          <% end %>
+        </div>
+      <% end %>
+    </p>
+    <!-- 材料去向： -->
+    <p>
+      <%= t("delivery") %>：
+      <% @doc.departments.each do |dept| %>
+        <%= dept.name %>
+      <% end %>
+    </p>
+    <!-- 录入人员： -->
+    <p>
+      <%= t("editor") %>：
+      <% unless @doc.editor.nil? %>
+        <%= @doc.editor.username %>
+      <% end %>
+    </p>
+    <!-- 录入时间： -->
+    <p>
+      <%= t("created_at") %>：<%= @doc.created_at.to_s(:ymd) %>
+    </p>
+    <p>
+      <%= t("doc") + t("blank") + t("state") %>：
+        <%= t(@doc.status, scope: "doc_.status") %>
+    </p>
+    <p>
+      <%= t("privatelevel") %>：<%= t(@doc.level, scope: "doc_.level") %>
+    </p>
+    <% if @doc.tags.any? %>
+    <p>
+      <%= t("doc") + t("blank") + t("tag") %>：
+        <% @doc.tags.each do |t| %>
+          <%= t.name %>
+        <% end %>
+    </p>
+    <% end %>
+    <p>
+      <%= t("doc") + t("blank") + t("desc") %>：
+      <%= sanitize @doc.description %>
+    </p>
+    <p>
+      <% if @doc.images.present? %>
+        <% @doc.images.each do |i| %>
+          <%= link_to image_tag(i.url(:small)), i.url %>
+        <% end %>
+      <% end %>
+    </p>
+  </div>
+</div>
+
+<header>
+  <h4>Comments</h4>
+</header>
+<div id="comments">
+  <% if @doc.comments.persisted.any? %>
+    <%= render @doc.comments.persisted %>
+  <% else %>
+    <p>
+      该文件没有评论
+    </p>
+  <% end %>
+</div>
+
+<% if policy(@comment).create? %>
+  <%= render "comments/form", doc: @doc, comment: @comment %>
+<% end %>

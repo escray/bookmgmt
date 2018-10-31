@@ -1,0 +1,15 @@
+<header>
+  <h2>登录</h2>
+</header>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :login, label: '用户名称', required: false, autofocus: true %>
+    <%= f.input :password, label: '登录密码', required: false %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "登录", class: "btn btn-primary" %>
+  </div>
+<% end %>

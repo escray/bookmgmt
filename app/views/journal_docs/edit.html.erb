@@ -1,0 +1,11 @@
+<header>
+  <h3>迁移至 new_admin_journal_doc_path</h3>
+</header>
+<% if false %>
+<%= simple_form_for [@journal, @doc] do |f| %>
+  <%= render partial: "form", locals: { f: f } %>
+  <%= f.submit t("update") + t("blank") + t("doc"),
+    data: { disable_with: "资料更新中……" },
+    class: "btn btn-primary" %>
+<% end %>
+<% end %>

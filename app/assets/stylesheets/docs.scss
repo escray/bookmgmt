@@ -1,0 +1,73 @@
+// Place all the styles related to the docs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#docs h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0px 0px;
+}
+
+#docs li {
+  padding-bottom: 10px;
+}
+
+#attributes {
+  @extend .table;
+  @extend .table-condensed;
+  width: 65%;
+
+  th {
+    width: 35%;
+  }
+
+  tr:first-child {
+    td, th {
+      border-top: 0px;
+    }
+  }
+
+  td, th {
+    line-height: 24px !important
+  }
+}
+
+blockquote.comment p {
+  font-size: 14px;
+}
+
+.state {
+  @extend .label;
+  font-size: 12px;
+  padding: 0.3em 0.6em;
+}
+
+.status {
+  @extend .label;
+  font-size: 12px;
+  padding: 0.3em 0.6em;
+}
+
+.status-lend {
+  background-color: #990000;
+}
+
+.status-available {
+  background-color: #008000;
+}
+
+.tag {
+  @extend .state;
+  @extend .label-info;
+  margin-right: 10px;
+
+  a {
+    color: white;
+
+    &.remove {
+      font-family: 'FontAwesome';
+      @extend .fa-close;
+      margin-right: 0.5em;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+<header>
+  <h3>系统管理</h3>
+</header>
+<%
+  @journals = Journal.all
+  journal_names = @journals.map { |j| j.name }
+
+  colors = ['rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)']
+
+  amounts = Hash.new(0)
+  @journals.each do |j|
+    total = 0
+    j.docs.each do |d|
+      if d.amount.nil?
+
+      else
+        total = total + d.amount
+      end
+    end
+    amounts[j.name] = total
+  end
+
+  # puts amounts
+
+  @docs_amounts = {
+    labels: amounts.keys,
+    datasets: [{
+      label: "资料总份数",
+      data: amounts.values,
+      backgroundColor: colors,
+      borderWidth: 1
+      }]
+  }
+%>
+
+<canvas id="amountChart" width="400" height="200"></canvas>
+<script>
+var ctxAmount = document.getElementById("amountChart");
+var ctxChart = new Chart(ctxAmount, {
+  type: 'bar',
+  data: <%= raw @docs_amounts.to_json %>,
+  option: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero:true
+        }
+      }]
+    }
+  }
+
+})
+</script>

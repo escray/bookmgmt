@@ -1,0 +1,61 @@
+<h3>资料导出</h3>
+
+<%= form_for [:admin, CsvExport.new] do |f| %>
+  <div class="form-group">
+    <%= f.label :csv_file %>
+    <%= f.file_field :csv_file, required: true, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "导出", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<table class="table">
+  <tr>
+    <th>
+      ID
+    </th>
+    <th>
+      状态
+    </th>
+    <th>
+      CSV档案
+    </th>
+    <th>
+      总笔数
+    </th>
+    <th>
+      汇入成功笔数
+    </th>
+    <th>
+      错误讯息
+    </th>
+  </tr>
+  <% @export.each do |export| %>
+  <tr>
+    <td>
+      <%= export.id %>
+    </td>
+    <td>
+      <%= export.status %>
+    </td>
+    <td>
+      <%= link_to export.csv_file.url, export.csv_file.url %>
+    </td>
+    <td>
+      <%= export.total_count %>
+    </td>
+    <td>
+      <%= export.success_count %>
+    </td>
+    <td>
+      <ul>
+        <% Array(export.error_messages).each do |e| %>
+          <li>
+            <%= e[0] %> ---> <strong><%= e[1] %></strong>
+          </li>
+        <% end %>
+      </ul>
+    </td>
+  </tr>
+  <% end %>
+</table>

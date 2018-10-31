@@ -1,20 +1,31 @@
 *.rbc
 capybara-*.html
 .rspec
+.keep
+
+# Ignore all logfiles and tempfiles.
 /log
 /tmp
+!/log/.keep
+!/tmp/.keep
+
+# Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+
 /public/system
 /coverage/
 /spec/tmp
+
+public/uploads
+uploads/*
+
 *.orig
 rerun.txt
 pickle-email-*.html
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
-config/master.key
 
 # Only include if you have production secrets in this file, which is no longer a Rails default
 # config/secrets.yml
@@ -24,6 +35,7 @@ config/master.key
 .env
 
 ## Environment normalization:
+# Ignore bundler config.
 /.bundle
 /vendor/bundle
 
@@ -43,7 +55,3 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
-
-# Ignore node_modules
-node_modules/
-

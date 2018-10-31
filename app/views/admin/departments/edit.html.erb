@@ -1,0 +1,8 @@
+<header>
+  <h3></h3>
+</header>
+<%= simple_form_for [:admin, @department] do |f| %>
+  <%= render partial: "form", locals: { f: f } %>
+  <%= f.submit t("edit") + t("blank") + t("dept"), data: { disable_with: "单位更新中……" },
+    class: "btn btn-primary" %>
+<% end %>

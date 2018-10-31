@@ -1,0 +1,243 @@
+<% title(@doc.name) %>
+<div id="doc">
+  <header>
+    <h4><%= link_to @doc.journal.try(:name), @doc.journal %>
+      <i class="fa fa-caret-right" aria-hidden="true"></i></h4>
+      <h3><%= @doc.name %></h3>
+    <ul class="actions">
+      <% if policy(@doc).update? %>
+      <li>
+        <%= link_to t("edit") + t("blank") + t("doc"),
+          edit_admin_journal_doc_path(@journal, @doc), class: "edit" %>
+      </li>
+      <% end %>
+      <% if policy(@doc).destroy? %>
+      <li>
+        <%= link_to t("delete") + t("blank") + t("doc"),
+          [@journal, @doc],
+          method: :delete,
+          data: { confirm: "确定要删除这份资料么？"}, class: "delete" %>
+      </li>
+      <% end %>
+    </ul>
+  </header>
+  <div class="row">
+    <table id = 'attributes'>
+      <tr>
+        <th>
+          <%= t("doc") + t("blank") + t("num") %>：
+        </th>
+        <td>
+          <%= @doc.id %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <%= t("doc") + t("blank") + t("name") %>：
+        </th>
+        <td>
+          <%= @doc.name %></td>
+      </tr>
+      <tr>
+        <th>
+          <%= t("receive") %>：
+        </th>
+        <td>
+          <% if @doc.receive %>
+            <%= @doc.receive.strftime("%Y-%m-%d") %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <%= t("doc") + t("blank") + t("origin") %>：
+        </th>
+        <td>
+          <%= @doc.origin %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <%= t("doc") + t("blank") + t("receivecount") %>：
+        </th>
+        <td>
+          <%= @doc.amount %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <%= t("doc") + t("blank") + t("attach") %>：
+        </th>
+        <td>
+          <% if @doc.attachments.any? %>
+            <div class="attachments">
+              <% @doc.attachments.each do |attachment| %>
+              <p>
+                <% unless attachment.file.url.nil? %>
+                <%= link_to File.basename(attachment.file.url),
+                  attachment_path(attachment) %>
+                (<%= number_to_human_size(attachment.file.size) %>)
+                <% end %>
+              </p>
+              <% end %>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <!-- 材料去向： -->
+          <%= t("delivery") %>：
+        </th>
+        <td>
+          <% @doc.departments.each do |dept| %>
+            <%= dept.name %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+            <%= t("privatelevel") %>：
+        </th>
+        <td>
+          <%= t(@doc.level, scope: "doc_.level") %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+            <%= t("doc") + t("blank") + t("state") %>：
+        </th>
+        <td>
+          <span class='status status-<%= @doc.status %>'>
+            <%= t(@doc.status, scope: "doc_.status") %>
+          </span>
+        </td>
+      </tr>
+      <% if @doc.tags.any? %>
+        <tr id="tags">
+          <th>
+              <%= t("doc") + t("blank") + t("tag") %>：
+          </th>
+          <td>
+            <%= render @doc.tags, doc: @doc %>
+          </td>
+        </tr>
+      <% end %>
+      <tr>
+        <th>
+          <!-- 录入人员： -->
+          <%= t("editor") %>：
+        </th>
+        <td>
+          <% unless @doc.editor.nil? %>
+          <%= @doc.editor.username %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <!-- 录入时间： -->
+          <%= t("created_at") %>：
+        </th>
+        <td>
+          <%= @doc.created_at.to_s(:ymd) %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <%= t("doc") + t("blank") + t("desc") %>：
+        </th>
+        <td>
+          <%= sanitize @doc.description %></td>
+      </tr>
+      <tr>
+        <th>
+          <%= t("doc") + t("blank") + "流转" %>：
+        </th>
+        <td>
+
+
+          <% if @doc.amount && @doc.amount > 0 %>
+          <% @doc.items.each do |item| %>
+          <p>
+              <%= item.name %>
+              <% if item.owner == '资料处' %>
+              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approvalModal">
+                <%= "借阅" %>
+              </button>
+              <% else %>
+              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#approvalModal">
+                <%= "归还" %>
+              </button>
+              <% end %>
+              </p>
+
+
+          <% end %>
+
+
+
+              <!-- modal -->
+              <div class="modal fade" id="approvalModal" tabindex="-1"
+                role="dialog" aria-labelledby="approvalModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <strong class="modal-title" id="approvalModalLabel">资料流转</strong>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <%= form_tag lend_doc_item_path(journal_id: @journal.shortname, doc_id: @doc.id), method: :get,
+                        class: "form-inline" do %>
+                        <%= label_tag 'lend', '借阅人：',
+                          class: "control-label" %>
+                        <%= text_field_tag :lend, params[:lend],
+                          class: "form-control" %>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danget"
+                          data-dismiss="modal">取消</button>
+                        <%= submit_tag "提交", name: nil,
+                         class:"btn btn-success" %>
+                      <% end %>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+            </li>
+          <% end %>
+
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+        <% if @doc.images.present? %>
+          <% @doc.images.each do |i| %>
+            <%= link_to image_tag(i.url(:small)), i.url %>
+          <% end %>
+        <% end %>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+</div>
+<header>
+  <h4>Comments</h4>
+</header>
+<div id="comments">
+  <% if @doc.comments.persisted.any? %>
+    <%= render @doc.comments.persisted %>
+  <% else %>
+    <p>
+      该文件没有评论
+    </p>
+  <% end %>
+</div>
+
+<% if policy(@comment).create? %>
+  <%= render "comments/form", doc: @doc, comment: @comment %>
+<% end %>

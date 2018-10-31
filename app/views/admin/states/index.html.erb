@@ -1,0 +1,22 @@
+<header>
+  <h3><%= t("state") + t("blank") + t("mgmt") %></h3>
+  <ul class="actions">
+    <li>
+      <%= link_to t("create") + t("blank") + t("state"),
+       new_admin_state_path, class: "new" %>
+    </li>
+  </ul>
+</header>
+
+<ul id="states">
+  <% @states.each do |state| %>
+  <li>
+    <%= render "states/state", state: state %>
+    <% if state.default? %>
+      (<%= t("default") %>)
+    <% else %>
+      <%= link_to t("set") + t("blank") + t("default"), make_default_admin_state_path(state) %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>

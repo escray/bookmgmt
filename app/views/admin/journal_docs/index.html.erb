@@ -1,0 +1,112 @@
+<header>
+  <h3><%= t("doc_list") %></h3>
+<% admins_only do %>
+<ul class="actions" style="padding-bottom: 5px;">
+  <li>
+    <%= link_to(t("create") + t("blank") + t("doc"),
+      new_admin_journal_doc_path, class: "new") %>
+  </li>
+</ul>
+<% end %>
+</header>
+<div class="submenu">
+  <div class="btn-group">
+    <%= link_to "#{t('all')} (#{@journal.docs.count})",
+      admin_journal_docs_path(status: nil),
+      class: "btn btn-success btn-group
+              #{(params[:status].blank?) ? "active" : "" }" %>
+    <% Doc::STATUS.each do |s| %>
+      <%= link_to t(s, scope: 'doc_.status') + " (#{@journal.docs.by_status(s).count})",
+        admin_journal_docs_path(status: s),
+        class: "btn btn-success btn-group
+                #{(params[:status].blank?) ? "active" : "" }" %>
+    <% end %>
+  </div>
+</div>
+<div id="docs" class="row">
+  <%= form_tag bulk_update_admin_docs_path, class: "table" do %>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>
+          <%= check_box_tag "全选", "1", false, id: "toggle_all" %>
+        </th>
+        <th>
+          <%= t("num") %>
+        </th>
+        <th>
+          <%= t("journal") + t("blank") + t("name") %>
+        </th>
+        <th>
+          <%= t("doc") + t("blank") + t("name") %>
+        </th>
+        <th>
+          <%= t("origin") %>
+        </th>
+        <!-- <th>
+          <%= t("receivecount") %>
+        </th> -->
+        <th>
+          <%= t("receive") %>
+        </th>
+        <th>
+          <%= t("operation") %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @docs.each do |doc| %>
+      <tr>
+        <td>
+          <%= check_box_tag "ids[]", doc.id %>
+        </td>
+        <td>
+          <%= link_to(doc.id, admin_doc_path(doc)) %>
+        </td>
+        <td>
+          <%= doc.journal.name %>
+        </td>
+        <td>
+          <%= link_to doc.name, admin_doc_path(doc) %>
+        </td>
+        <td>
+          <%= link_to doc.origin, journal_doc_path(doc.journal, doc) %>
+        </td>
+        <!-- <td>
+          <%= doc.amount %>
+        </td> -->
+        <td>
+          <%= doc.receive %>
+        </td>
+        <td>
+          <%= link_to t("edit"), edit_admin_journal_doc_path(@journal, doc), class: "edit" %>
+          <%= link_to t("delete"), admin_journal_doc_path(@journal, doc),
+              method: :delete, data: { confirm: "确定要删除这份刊物么？" },
+              class: "delete"%>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @docs %>
+
+<p>
+<%= select_tag :doc_status,
+  options_for_select([[t("available", scope: "doc_.status"), "available"],
+                      [t("lend", scope: "doc_.status"), "lend"]]),
+  class: "form-control", style: "width: 80px; display: inline"%>
+<%= submit_tag t(:bulk_update), class: "btn btn-primary" %>
+<%= submit_tag t(:bulk_delete), class: "btn btn-danger",
+  data: { confirm: "你确定要批量删除么？" } %>
+</p>
+<% end %>
+</div>
+<script>
+$("#toggle_all").click(function(){
+  if ( $(this).prop("checked") ) {
+    $("input[name='ids[]']").prop("checked", true);
+  } else {
+    $("input[name='ids[]']").prop("checked", false);
+  }
+});
+</script>

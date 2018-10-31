@@ -1,0 +1,9 @@
+<header>
+  <h3>新增资料</h3>
+</header>
+<%= simple_form_for([@journal, @doc],
+   url: admin_journal_docs_path) do |f| %>
+  <%= render partial: "form", locals: { f: f } %>
+  <%= f.submit "创建资料", data: { disable_with: "资料创建中……"},
+        class: "btn btn-primary" %>
+<% end %>

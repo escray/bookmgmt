@@ -1,0 +1,7 @@
+<header>
+  <h2>新建用户</h2>
+</header>
+<%= simple_form_for [:admin, @user] do |f| %>
+  <%= render partial: 'form', locals: { f: f } %>
+  <%= f.button :submit, '创建用户', class: "btn btn-primary" %>
+<% end %>

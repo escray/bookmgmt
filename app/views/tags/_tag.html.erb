@@ -1,0 +1,6 @@
+<div class="tag">
+  <%= link_to "<span></span>".html_safe,
+    remove_doc_tag_path(doc, tag), method: :delete, remote: true,
+    class: "remove", title: "remove" %>
+  <%= tag.name %>
+</div>

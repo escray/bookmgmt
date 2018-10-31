@@ -1,0 +1,30 @@
+<%= f.association :journal, label: '刊物名称' %>
+<%= f.input :name, label: "资料标题" %>
+<%= f.input :origin, label: "原始编号" %>
+<%= f.input :level, label: "私密程度", as: :select, prompt: "请选择私密程度",
+  collection: Doc::LEVEL.map { |s| [t(s, :scope=>"doc_.level"), s] } %>
+<%= f.input :status, label: "资料状态", as: :radio_buttons,
+  collection: Doc::STATUS.map { |s| [t(s, :scope=>"doc_.status"), s] },
+  class: "btn-group" %>
+<%= f.input :receive, as: :string, label: "到刊时间",
+  input_html: { data: { behaviour: "datepicker" }}  %>
+<%= f.input :publish, as: :string, label: "出版时间",
+  input_html: { data: { behaviour: "datepicker" }}  %>
+<%= f.input :description, as: :text, label: "资料描述" %>
+<%= render "tags/form", f: f %>
+<%= f.input :amount, label: "资料份数" %>
+<%= f.association :departments, as: :check_boxes, label: "资料分发" %>
+<div id="attachments">
+  <%= render partial: "attachments/form", locals: { f: f, index: 0 } %>
+</div>
+<p>
+  <%= link_to "新增附件", new_attachment_path, remote: true, id: "add_file",
+    data: { params: { index: @doc.attachments.size } } %>
+</p>
+<script>
+  $("#doc_journal_id").select2( {theme: "bootstrap"} );
+  $("#doc_receive").datepicker({ format: "yyyy-mm-dd",
+    language: "<%= I18n.locale %>" });
+  $("#doc_publish").datepicker({ format: "yyyy-mm-dd",
+    language: "<%= I18n.locale %>" });
+</script>

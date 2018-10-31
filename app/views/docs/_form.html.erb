@@ -1,0 +1,42 @@
+<%= f.association :journal, label: '刊物名称' %>
+<%= f.input :name, label: "资料标题" %>
+<%= f.input :origin, label: "原始编号" %>
+<%= f.input :level, label: "私密程度", as: :select, prompt: "请选择私密程度",
+  collection: Doc::LEVEL.map { |s| [t(s, :scope=>"doc_.level"), s] } %>
+<%= f.input :status, label: "资料状态", as: :radio_buttons,
+  collection: Doc::STATUS.map { |s| [t(s, :scope=>"doc_.status"), s] },
+  class: "btn-group" %>
+<%= f.input :receive, as: :date, label: "到刊时间" %>
+<%= f.input :publish, as: :date, label: "出版时间" %>
+<%= f.input :description, label: "资料描述" %>
+<%= f.input :tag_names, label: "标签标签" %>
+<%= render "tags/form", f:f %>
+<!-- <%= f.input :editor, label: "录入用户" %> -->
+<%= f.input :amount, label: "资料份数" %>
+<%= f.association :departments, as: :check_boxes, label: "资料分发" %>
+<div class="form-group">
+  <label>资料图片</label>
+  <%= f.file_field :images, multiple: true, class: "form-control" %>
+  <% if f.object.images.present? %>
+    <label>
+      <%= f.check_box :remove_images %>删除图档
+    </label>
+    <% f.object.images.each do |i| %>
+      <%= link_to i.filename, i.url, target: "_blank" %>
+    <% end %>
+  <% end %>
+</div>
+<div id="attachments">
+  <%= render partial: "attachments/form", locals: { f: f, index: 0 } %>
+</div>
+<p>
+  <%= link_to "新增附件", new_attachment_path, remote: true, id: "add_file",
+    data: { params: { index: @doc.attachments.size } } %>
+</p>
+<script>
+  $("#doc_journal_id").select2({ theme: "bootstrap" });
+  $('#doc_receive').datepicker({ format: "yyyy-mm-dd",
+      language: "<%= I18n.locale %>" });
+  $('#doc_publish').datepicker({ format: "yyyy-mm-dd",
+      language: "<%= I18n.locale %>" });
+</script>

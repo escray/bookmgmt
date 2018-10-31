@@ -1,0 +1,5 @@
+<%= simple_form_for [:admin, state] do |f| %>
+  <%= f.input :name, label: '状态名称' %>
+  <%= f.input :color, label: '状态颜色' %>
+  <%= f.submit '新增状态', class: 'btn btn-primary' %>
+<% end %>

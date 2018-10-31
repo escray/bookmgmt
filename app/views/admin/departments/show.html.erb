@@ -1,0 +1,21 @@
+<% title(@department.name) %>
+<header>
+  <h3><%= @department.name %></h3>
+  <ul class="actions">
+    <li>
+      <%= link_to t("edit") + t("dept"),
+        edit_admin_department_path(@department), class: "edit" %>
+    </li>
+    <li>
+      <%= link_to t("delete") + t("dept"),
+        admin_department_path(@department), method: :delete,
+        data: { confirm: "确定要删除这个单位么？" }, class: "delete" %>
+    </li>
+  </ul>
+</header>
+
+<div class="row">
+  <p>
+    <%= t("dept") + t("blank") + t("name") %>：<%= @department.name %>
+  </p>
+</div>

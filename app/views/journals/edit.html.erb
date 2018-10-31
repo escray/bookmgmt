@@ -1,0 +1,9 @@
+<header>
+  <h3>编辑刊物</h3>
+</header>
+<%= simple_form_for @journal do |f| %>
+  <%= render partial: "form", locals: { f: f } %>
+
+  <%= f.submit "更新刊物", data: { disable_with: "刊物更新中……"},
+       class: "btn btn-primary"%>
+<% end %>

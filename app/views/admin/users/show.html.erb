@@ -1,0 +1,28 @@
+<header>
+  <h2><%= @user %></h2>
+  <ul class="actions">
+    <li>
+      <%= link_to "编辑用户", [:edit, :admin, @user], class: "edit" %>
+    </li>
+    <li>
+      <%= link_to "归档用户", [:archive, :admin, @user], method: :patch,
+        data: { confirm: "你确定要归档该用户么？" }, class: "delete" %>
+    </li>
+  </ul>
+</header>
+<header>
+  <h3>角色</h3>
+</header>
+<% if @user.roles.any? %>
+  <ul>
+    <% @user.roles.each do |role| %>
+      <li>
+        <%= role.journal.name %> :  <%= role.role.titleize %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>
+    该用户没有被授予任何角色
+  </p>
+<% end %>

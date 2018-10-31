@@ -1,0 +1,45 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap-datepicker3";
+@import "select2";
+@import "select2-bootstrap";
+@import "font-awesome";
+@import "jquery-ui";
+@import "journals";
+@import "docs";
+@import "application";
+@import "admin/application";
+@import "admin/users.scss";
+@import "admin/docs.scss";
+@import "responsive";
+
+
+header {
+  @extend .page-header;
+  position: relative;
+  padding-bottom: 0px;
+
+  &:first-child {
+    margin-top: 20px;
+  }
+}
+
+.sortable .sortable_icon {
+  border: none;
+  color: #ECECEC;
+  font-size: 20px;
+  cursor: move;
+  padding-right: 10px;
+}
+
+.submenu {
+  margin-bottom: 10px;
+}
+
+#doc_search {
+  max-width: 100%;
+}
+
+.form-control {
+  max-width: 360px;
+}

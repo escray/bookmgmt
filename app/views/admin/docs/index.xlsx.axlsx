@@ -1,0 +1,12 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "docs") do |sheet|
+  sheet.add_row ["刊物名称", "资料序号", "资料名称", "出版时间", "到刊时间", "资料原号",
+                 "资料份数", "录入人员", "录入时间", "资料状态", "私密程度", "资料描述"]
+  @docs.each do |d|
+    sheet.add_row [d.journal.try(:name), d.id, d.name, d.publish, d.receive,
+                   d.origin, d.amount,
+                   d.editor.username, d.created_at.to_s(:ymd),
+                   t(d.status, scope: 'doc_.status'),
+                   t(d.level, scope: 'doc_.level'), d.description]
+  end
+end

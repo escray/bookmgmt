@@ -1,0 +1,67 @@
+<header>
+  <h3><%= t("journal_list") %></h3>
+  <% admins_only do %>
+  <ul class="actions">
+    <li>
+      <%= link_to "新增刊物", new_admin_journal_path, class: "new" %>
+    </li>
+  </ul>
+  <% end %>
+</header>
+<div id="journals" class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          <%= t("journal") + t("blank") + t("num") %>
+        </th>
+        <th>
+          <%= t("journal") + t("blank") + t("name") %>
+        </th>
+        <th>
+          <%= t("publisher") %>
+        </th>
+        <th>
+          <%= t("interval") %>
+        </th>
+        <th>
+          <%= t("default") + t("blank") + t("amount") %>
+        </th>
+        <th>
+          <%= t("delivery") %>
+        </th>
+        <th>
+          <%= t('doc') + t('blank') + t('list') %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @journals.each do |journal| %>
+        <tr>
+          <td>
+            <%= journal.id %>
+          </td>
+          <td>
+            <%= link_to journal.name, journal_path(journal.shortname) %>
+          </td>
+          <td>
+            <%= journal.publisher %>
+          </td>
+          <td>
+            <%= journal.interval %>
+          </td>
+          <td>
+            <%= journal.amount %>
+          </td>
+          <td>
+            <%= journal.delivery %>
+          </td>
+          <td>
+            <%= link_to t('doc'), journal_docs_path(journal), class: "index"  %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @journals %>
+</div>

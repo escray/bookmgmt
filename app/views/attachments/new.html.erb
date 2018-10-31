@@ -1,0 +1,3 @@
+<%= fields_for @doc do |f| %>
+  <%= render partial: "form", locals: { f: f, index: @index } %>
+<% end %>

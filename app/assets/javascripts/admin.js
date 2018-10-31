@@ -1,0 +1,13 @@
+//= require jquery
+//= require jquery-ui
+//= require jquery_ujs
+//= require bootstrap/alert
+//= require bootstrap/dropdown
+//= require bootstrap-sprockets
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN
+//= require select2
+//= require validator.min
+//= require nested_form_fields
+//= require ckeditor/init
+//= require_tree .

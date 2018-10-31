@@ -1,0 +1,51 @@
+<% title(@journal.name) %>
+<header>
+  <h3><%= @journal.name %><%= image_tag(@journal.logo.url(:thumb)) %></h3>
+  <ul class="actions">
+    <li>
+      <%= link_to t("edit") + t("blank") + t("journal"),
+         edit_admin_journal_path(@journal), class: "edit" %>
+    </li>
+    <li>
+      <%= link_to t("delete") + t("blank") + t("journal"),
+         admin_journal_path(@journal),
+         method: :delete, data: { confirm: "确定要删除这份刊物么？" },
+         class: "delete" %>
+    </li>
+  </ul>
+</header>
+<div class="row">
+  <p>
+    刊物名称：<%= @journal.name %>
+  </p>
+  <p>
+    名称简写：<%= @journal.shortname %>
+  </p>
+  <p>
+    发行单位：<%= @journal.publisher %>
+  </p>
+  <p>
+    出版频度：<%= @journal.interval %>
+  </p>
+  <p>
+    默认份数：<%= @journal.amount %>
+  </p>
+  <!-- <p>
+    传发单位：<%= @journal.delivery %>
+  </p> -->
+  <p>
+    刊物描述：<%= @journal.description %>
+  </p>
+  <p>
+    刊物分发：
+    <% @journal.departments.each do |dept| %>
+      <%= dept.name %>
+    <% end %>
+  </p>
+  <% if @journal.logo.present? %>
+  <p>
+    刊物图片：<%= link_to image_tag(@journal.logo.url(:small)),
+                @journal.logo.url, target: "_blank" %>
+  </p>
+  <% end %>
+</div>

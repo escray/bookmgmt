@@ -1,0 +1,60 @@
+"zh-CN":
+  secretdoc: 外来资料
+  journal_list: 刊物列表
+  journal: 刊物
+  num: 序号
+  name: 名称
+  publisher: 发行单位
+  interval: 出版频度
+  amount: 份数
+  delivery: 传发单位
+  doc_list: 资料列表
+  doc: 资料
+  origin: 原号
+  receivecount: 份数
+  receive: 到刊时间
+  publish: 出版时间
+  attach: 附件
+  desc: 描述
+  editor: 录入人员
+  created_at: 录入时间
+  operation: 操作
+  create: 新增
+  edit: 编辑
+  update: 更新
+  delete: 删除
+  blank: ""
+  mgmt: 管理
+  link: 链接
+  user: 用户
+  dept: 单位
+  role: 角色
+  state: 状态
+  tag: 标签
+  comment: 评论
+  set: 设为
+  default: 默认
+  faq: 常见问题
+  privatelevel: 私密程度
+  bulk_update: 批量修改
+  bulk_delete: 批量删除
+  all: 全部
+  list: 列表
+  doc_:
+    status:
+      available: 在馆
+      lend: 借出
+    level:
+      open: 公开
+      internal: 内部
+  admin:
+    doc_list: 资料列表
+    journal_list: 刊物列表
+    dept_list: 单位列表
+    docs_mgmt: 资料管理
+    journals_mgmt: 刊物管理
+    users_mgmt: 用户管理
+    states_mgmt: 状态管理
+    versions_mgmt: 版本管理
+    depts_mgmt: 单位管理
+    doc_edit: 编辑资料

@@ -1,0 +1,11 @@
+<header>
+  <h4>新增评论</h4>
+</header>
+
+<%= simple_form_for [doc, comment] do |f| %>
+  <%= f.input :text, label: '资料评论' %>
+  <% if policy(doc).tag? %>
+    <%= render "tags/form", f: f %>
+  <% end %>
+  <%= f.submit "新增评论", class: 'btn btn-primary' %>
+<% end %>

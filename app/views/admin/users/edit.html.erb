@@ -1,0 +1,7 @@
+<header>
+  <h2>编辑用户</h2>
+</header>
+<%= simple_form_for [:admin, @user] do |f| %>
+  <%= render partial: "form", locals: { f: f, journals: @journals } %>
+  <%= f.button :submit, '更新用户', class: "btn btn-primary" %>
+<% end %>

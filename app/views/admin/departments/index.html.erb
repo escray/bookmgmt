@@ -1,0 +1,47 @@
+<header>
+  <h3><%= t("admin.dept_list") %></h3>
+  <% admins_only do %>
+  <ul class="actions">
+    <li>
+      <%= link_to t("create") + t("blank") + t("dept"),
+        new_admin_department_path, class: "new" %>
+    </li>
+  </ul>
+  <% end %>
+</header>
+<div id="departments" class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          <%= t("dept") + t("blank") + t("num") %>
+        </th>
+        <th>
+          <%= t("dept") + t("blank") + t("name") %>
+        </th>
+        <th>
+          <%= t("operation") %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @departments.each do |dept| %>
+      <tr>
+        <td>
+          <%= dept.id %>
+        </td>
+        <td>
+          <%= link_to(dept.name, admin_department_path(dept)) %>
+        </td>
+        <td>
+          <%= link_to t("edit"), edit_admin_department_path(dept),
+            class: "edit" %>
+          <%= link_to t("delete"), admin_department_path(dept),
+            method: :delete, data: { confirm: "确定要删除这个单位么？" },
+            class: "delete" %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

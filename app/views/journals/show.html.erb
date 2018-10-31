@@ -1,0 +1,112 @@
+<% title(@journal.name) %>
+<header>
+  <h4><%= @journal.name %></h4>
+  <ul class="actions">
+    <li>
+      <%= link_to "资料列表", journal_docs_url(@journal), class: "index" %>
+    </li>
+    <% if policy(Doc.new(journal: @journal)).create? %>
+    <li>
+      <%= link_to "新增资料", new_admin_journal_doc_path(@journal), class: "new" %>
+    </li>
+    <% end %>
+    <% if policy(@journal).update? %>
+    <li>
+      <%= link_to "编辑刊物", edit_admin_journal_path(@journal), class: "edit" %>
+    </li>
+    <% end %>
+    <% admins_only do %>
+    <li>
+      <%= link_to "删除刊物", admin_journal_path(@journal), method: :delete,
+          data: { confirm: "确定要删除这份刊物么？"}, class: "delete" %>
+    </li>
+    <% end %>
+  </ul>
+</header>
+
+<!-- TODO: beautify and simplify -->
+<div class="row">
+  <% if @journal.logo.present? %>
+  <p>
+    <%= link_to image_tag(@journal.logo.url(:small)),
+                @journal.logo.url, target: "_blank" %>
+
+  </p>
+  <% end %>
+  <!-- <p>
+    刊物名称：<%= @journal.name %>
+  </p>
+  <p>
+    名称简写：<%= @journal.shortname %>
+  </p>
+  <p>
+    发行单位：<%= @journal.publisher %>
+  </p>
+  <p>
+    出版频度：<%= @journal.interval %>
+  </p>
+  <p>
+    默认份数：<%= @journal.amount %>
+  </p>
+  <p>
+    传发单位：<%= @journal.delivery %>
+  </p>
+  <p>
+    刊物描述：<%= @journal.description %>
+  </p>
+   -->
+  <table class="table table-striped">
+    <tr>
+      <th>
+        名称简写
+      </th>
+      <td>
+        <%= @journal.shortname %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        发行单位
+      </th>
+      <td>
+        <%= @journal.publisher %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        出版频度
+      </th>
+      <td>
+        <%= @journal.interval %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        默认份数
+      </th>
+      <td>
+        <%= @journal.amount %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        传发单位
+      </th>
+      <td>
+        <% @journal.departments.each do |dept| %>
+          <%= dept.name %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        刊物描述
+      </th>
+      <td>
+        <%= @journal.description %>
+      </td>
+    </tr>
+
+  </table>
+
+</div>

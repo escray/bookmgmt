@@ -1,0 +1,8 @@
+<header>
+  <h3><%= t("edit") + t("blank") + t("journal") %></h3>
+</header>
+<%= simple_form_for [:admin, @journal] do |f| %>
+  <%= render partial: "form", locals: { f: f } %>
+  <%= f.submit t("update") + t("blank") + t("journal"),
+    data: { disable_with: "刊物更新中……" }, class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,8 @@
+<header>
+  <h3><%= t("create") + t("blank") + t("dept") %></h3>
+</header>
+<%= simple_form_for([:admin, @department]) do |f| %>
+<%= render partial: "form", locals: { f: f } %>
+<%= f.submit t("create") + t("blank") + t("dept"),
+  data: { disable_with: "单位创建中……"}, class: "btn btn-primary" %>
+<% end %>

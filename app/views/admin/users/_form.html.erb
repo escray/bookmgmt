@@ -1,0 +1,20 @@
+<%= f.input :username, label: '用户名称' %>
+<%= f.input :cname, label: '中文名称' %>
+<%= f.input :password, label: '密码' %>
+<%= f.input :is_admin, label: '是否管理员' %>
+<header>
+  <h3>角色</h3>
+</header>
+<table class="role">
+  <% @journals.each do |journal| %>
+    <tr>
+      <th>
+        <%= label_tag dom_id(journal), journal.name %>
+      </th>
+      <td>
+        <%= select_tag dom_id(journal), options_for_select(roles, @user.role_on(journal)), name: "roles[#{journal.id}]",
+        include_blank: true %>
+      </td>
+    </tr>
+  <% end %>
+</table>

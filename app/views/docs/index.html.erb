@@ -1,0 +1,65 @@
+<header>
+  <h3>资料列表</h3>
+  <ul class="actions">
+    <li>
+      <%= link_to "新增资料", new_doc_path, class: "new" %>
+    </li>
+  </ul>
+</header>
+
+<div id="docs" class="row">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>
+        序号
+      </th>
+      <th>
+        资料名称
+      </th>
+      <th>
+        到刊时间
+      </th>
+      <th>
+        资料类别
+      </th>
+      <th>
+        原号
+      </th>
+      <th>
+        份数
+      </th>
+      <th>
+        材料去向
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @docs.each do |doc| %>
+    <tr>
+      <td>
+        <%= doc.id %>
+      </td>
+      <td>
+        <%= link_to doc.category + ' - ' + doc.origin, doc %>
+      </td>
+      <td>
+        <%= doc.receive %>
+      </td>
+      <td>
+        <%= doc.category %>
+      </td>
+      <td>
+        <%= doc.origin %>
+      </td>
+      <td>
+        <%= doc.amount %>
+      </td>
+      <td>
+
+      </td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

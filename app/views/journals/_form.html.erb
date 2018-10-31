@@ -1,0 +1,35 @@
+<div class="group">
+  <%= f.input :name, label: "刊物名称" %>
+</div>
+<div class="group">
+  <%= f.input :shortname, label: "名称简写" %>
+</div>
+<div class="group">
+  <%= f.input :publisher, label: "发行单位" %>
+</div>
+<div class="group">
+  <%= f.input :interval, label: "出版频度" %>
+</div>
+<div class="group">
+  <%= f.input :amount, label: "默认份数" %>
+</div>
+<div class="group">
+  <%= f.input :delivery, label: "传发单位" %>
+</div>
+<div class="group">
+  <%= f.input :description, label: "刊物描述" %>
+</div>
+<div class="group">
+  <%= f.association :departments, as: :check_boxes, label: "刊物分发"  %>
+</div>
+<div class="group">
+  <label>刊物图片</label>
+  <%= f.file_field :logo, class: "from-control" %>
+  <% if f.object.logo.present? %>
+    <label><%= f.check_box :remove_logo %>删除图片</label>
+    <%= link_to f.object.logo.filename, f.object.logo.url, target: "_target" %>
+  <% end %>
+  <% if false %>
+  <%= f.input :image, as: :file, label: "刊物图片" %>
+  <% end %>
+</div>

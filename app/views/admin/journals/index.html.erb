@@ -1,0 +1,128 @@
+<header>
+  <h3><%= t("journal_list") %></h3>
+  <% admins_only do %>
+  <ul class="actions">
+    <li>
+      <%= link_to t("create") + t("blank") + t("journal"),
+        new_admin_journal_path, class: "new" %>
+    </li>
+  </ul>
+  <% end %>
+</header>
+<canvas id="journalChart" width="320" height"200"></canvas>
+<script>
+var ctx = document.getElementById("journalChart");
+var journalChart = new Chart(ctx, {
+  type: 'bar',
+  data: <%= raw @journal_stat.to_json %>,
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+})
+</script>
+<div id="journals" class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          <%= t("journal") + t("blank") + t("num") %>
+        </th>
+        <th>
+          <%= t("journal") + t("blank") + t("name") %>
+        </th>
+        <!-- <th>
+          <%= t("publisher") %>
+        </th> -->
+        <th>
+          <%= t("interval") %>
+        </th>
+        <th>
+          <%= t("default") + t("blank") + t("amount") %>
+        </th>
+        <!-- <th>
+          <%= t("delivery") %>
+        </th> -->
+        <th>
+          <%= t("operation") %>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="sortable">
+      <% @journals.each do |journal| %>
+        <tr data-reorder-url="<%= reorder_admin_journal_path(journal) %>">
+          <td>
+            <span class="sortable_icon">☰</span>
+            <%= journal.id %>
+          </td>
+          <td>
+            <%= link_to journal.name,
+              journal_path(journal.try(:shortname)) %>
+          </td>
+          <!-- <td>
+            <%= journal.publisher %>
+          </td> -->
+          <td>
+            <%= journal.interval %>
+          </td>
+          <td>
+            <%= journal.amount %>
+          </td>
+          <!-- <td>
+            <%= journal.delivery %>
+          </td> -->
+          <td>
+            <%= link_to "上移",
+              reorder_admin_journal_path(journal, position: :up),
+              method: :post, class: "btn btn-default" %>
+            <%= link_to "下移",
+              reorder_admin_journal_path(journal, position: :down),
+              method: :post, class: "btn btn-default" %>
+            <%= link_to "置顶",
+              reorder_admin_journal_path(journal, position: :first),
+               method: :post, class: "btn btn-default" %>
+            <%= link_to "置底",
+              reorder_admin_journal_path(journal, position: :last),
+              method: :post, class: "btn btn-default" %>
+            <%= link_to t("doc"),
+              admin_journal_docs_path(journal),
+              class: "list" %>
+            <%= link_to t("edit"), edit_admin_journal_path(journal),
+             class: "edit" %>
+            <%= link_to t("delete"), admin_journal_path(journal),
+             method: :delete, data: { confirm: "确定要删除这份刊物么？"},
+             class: "delete" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<script>
+$(".sortable").sortable({
+  axis: 'y',
+  items: 'tr',
+  cursor: 'move',
+  handle: ".sortable_icon",
+  stop: function(e, ui){
+    ui.item.children('td').effect('highlight', {}, 1000)
+  },
+  update: function(e, ui){
+    reorder_url = ui.item.data('reorder-url')
+    position = ui.item.index()
+    $.ajax({
+      type: 'POST',
+      url: reorder_url,
+      dataType: 'json',
+      data: { position: position }
+    })
+  }
+});
+
+</script>

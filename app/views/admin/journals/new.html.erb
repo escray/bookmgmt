@@ -1,0 +1,9 @@
+<header>
+  <h3>新增刊物</h3>
+</header>
+<%= simple_form_for([:admin, @journal]) do |f| %>
+<%= render partial: "form", locals: { f: f } %>
+
+<%= f.submit "创建刊物", data: { disable_with: "刊物创建中……" },
+     class: "btn btn-primary" %>
+<% end %>

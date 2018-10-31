@@ -1,0 +1,84 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  secretdoc: Secret Document
+  journal_list: Journal List
+  num: No.
+  journal: Journal
+  name: Name
+  publisher: Publisher
+  interval: Interval
+  amount: Amount
+  delivery: Delivery
+  doc_list: Document List
+  doc: Document
+  origin: Origin
+  receivecount: Count
+  receive: Receive Date
+  publish: Publish Date
+  attach: Attachment
+  desc: Description
+  editor: Editor
+  created_at: Create At
+  operation: Operation
+  create: Create
+  edit: Edit
+  update: Update
+  delete: Delete
+  blank: " "
+  mgmt: Management
+  link: Link
+  user: User
+  role: Role
+  dept: Department
+  state: State
+  tag: Tag
+  comment: Comment
+  set: Set
+  default: Default
+  faq: FAQ
+  privatelevel: Private Level
+  bulk_update: Bulk Update
+  bulk_delete: Bulk Delete
+  all: All
+  list: List
+  doc_:
+    status:
+      available: Available
+      lend: Lend
+    level:
+      open: Open
+      internal: Internal
+      sensitive: Sensitive
+      secret: Secret
+      classified: Classified
+  admin:
+    doc_list: Document List
+    journal_list: Journal List
+    dept_list: Department List
+    docs_mgmt: Document Management
+    journals_mgmt: Journal Management
+    users_mgmt: User Management
+    states_mgmt: State Management
+    versions_mgmt: Version Management
+    dept_mgmt: Department Management
+    doc_edit: Edit Document

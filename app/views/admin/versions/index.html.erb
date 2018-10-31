@@ -1,0 +1,62 @@
+<h2>修改历史</h2>
+<table class="table">
+  <tr>
+    <td width="20px">
+      ID
+    </td>
+    <td width="48px">
+      对象
+    </td>
+    <td width="96px">
+      对象编号
+    </td>
+    <td width="48px">
+      事件
+    </td>
+    <td>
+
+    </td>
+    <td width="96px">
+      操作者
+    </td>
+    <td>
+
+    </td>
+  </tr>
+  <% @versions.each do |version| %>
+  <tr>
+    <td>
+      <%= version.id %>
+    </td>
+    <td>
+      <%= version.item_type %>
+    </td>
+    <td>
+      <%= version.item_id %>
+    </td>
+    <td>
+      <%= version.event %>
+    </td>
+    <td>
+      <ul>
+        <% version.changeset.each do |key, value| %>
+          <li>
+            从 <%= value[0] %> 改成 <%= value[1] %>
+          </li>
+        <% end %>
+      </ul>
+    </td>
+    <td>
+      <%= version.whodunnit  %>
+    </td>
+    <td>
+      <% if version.event != 'create' %>
+        <%= link_to "Undo", admin_version_undo_path(version),
+          data: { confirm: "Are you sure?"}, method: :post,
+          class: "btn btn-danger" %>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<%= paginate @versions %>
