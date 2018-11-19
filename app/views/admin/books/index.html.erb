@@ -1,0 +1,39 @@
+<header>
+  <h3>图书列表</h3>
+  <% admins_only do %>
+  <ul class="actions">
+    <li>
+      <%= link_to "图书列表", new_admin_book_path, class: "new" %>
+      </li>
+    </ul>
+  <% end %>
+</header>
+<table class="table">
+  <thead>
+    <tr>
+      <th>书名</th>
+      <th>作者</th>
+      <th>出版社</th>
+      <th>出版时间</th>
+      <th>管理操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <td><%= book.title %></td>
+      <td>
+        <%= book.author %>
+      </td>
+      <td>
+        <%=book.pub_name %>
+      </td>
+      <td>
+        <%= book.pub_year %>
+      </td>
+      <td>
+        <%= link_to "修改", edit_admin_book_path(book), class: "edit" %>
+        <%= link_to "删除", admin_book_path(book), method: :delete, data: { confirm: "确定要删除这本图书么？"}, class: "delete" %>
+      </td>
+    <% end %>
+  </tbody>
+</table>

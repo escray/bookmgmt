@@ -1,0 +1,7 @@
+<header>
+  <h3>新增图书</h3>
+</header>
+<%= simple_form_for([:admin, @book]) do |f| %>
+  <%= render partial: "form", locals: { f: f } %>
+  <%= f.submit "保存图书", data: { disable_with: "正在保存……"} %>
+<% end %>

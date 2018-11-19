@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180911025838) do
+ActiveRecord::Schema.define(version: 20181116213127) do
 
   create_table "attachments", force: :cascade do |t|
     t.string "file"
@@ -19,6 +19,29 @@ ActiveRecord::Schema.define(version: 20180911025838) do
     t.datetime "updated_at", null: false
     t.string "description"
     t.index ["doc_id"], name: "index_attachments_on_doc_id"
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "pub_name"
+    t.string "pub_year"
+    t.string "edit_num"
+    t.integer "page"
+    t.string "series_name"
+    t.string "remark"
+    t.string "isbn"
+    t.integer "copy"
+    t.string "keyword"
+    t.decimal "price"
+    t.string "barcode"
+    t.string "book_class"
+    t.string "shelf_class"
+    t.string "shelf_num"
+    t.datetime "record_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "description"
   end
 
   create_table "comments", force: :cascade do |t|

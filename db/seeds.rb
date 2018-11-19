@@ -8,6 +8,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' },
 #   { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Book.create!(title: '代码整洁之道',
+             author: 'Robert C. Martin',
+             pub_name: '人民邮电出版社',
+             pub_year: '2009',
+             edit_num: '1',
+             page: '431',
+             ISBN: '978-7-115-21048-7/TP')
+
 unless User.exists?(email: 'admin@example.com')
   User.create!(email: 'admin@example.com',
                username: 'admin',

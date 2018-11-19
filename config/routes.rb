@@ -23,6 +23,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :books
+
     resources :csv_imports
     resources :csv_exports
 
