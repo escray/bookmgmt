@@ -40,6 +40,23 @@ unless User.exists?(email: 'user@example.com')
                password: '12345678',
                is_admin: false)
 end
+
+unless User.exists?(email: 'book@example.com')
+  User.create!(email: 'book@example.com',
+               username: 'book',
+               cname: '图书管理员',
+               password: '12345678',
+               is_admin: true)
+end
+
+unless User.exists?(email: 'journal@example.com')
+  User.create!(email: 'journal@example.com',
+               username: 'journal',
+               cname: '资料管理员',
+               password: '12345678',
+               is_admin: true)
+end
+
 #
 
 departments = %w[人力资源部 企划部 销售部 研发部 测试部 维修部]

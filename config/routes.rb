@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
     resources :books
 
+    resources :pubs
+
     resources :csv_imports
     resources :csv_exports
 
@@ -76,6 +78,10 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :books, only: %i[index show]
+
+  resources :pubs, only: %i[index show]
 
   resources :attachments, only: %i[show new]
 end

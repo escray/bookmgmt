@@ -1,5 +1,6 @@
 # book
 class Admin::BooksController < ApplicationController
+  layout 'admin'
   before_action :set_book, only: %i[show edit update destroy]
   skip_after_action :verify_authorized, :verify_policy_scoped
 
