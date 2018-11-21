@@ -3,9 +3,9 @@ FactoryBot.define do
     sequence(:email) { |n| "test#{n}@example.com" }
     sequence(:username) { |n| "test#{n}" }
     sequence(:cname) { |n| "测试#{n}" }
-    password 'password'
+    password { 'password' }
     trait :admin do
-      is_admin true
+      is_admin { true }
     end
   end
 end

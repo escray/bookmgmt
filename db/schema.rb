@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181116213127) do
+ActiveRecord::Schema.define(version: 2018_11_16_213127) do
 
   create_table "attachments", force: :cascade do |t|
     t.string "file"

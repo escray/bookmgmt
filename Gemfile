@@ -70,6 +70,7 @@ gem 'rails-i18n'
 # export excel file
 gem 'axlsx'
 gem 'axlsx_rails'
+gem 'zip-zip'
 # gem 'rubyzip', '~> 0.9.9'
 
 # paginate
