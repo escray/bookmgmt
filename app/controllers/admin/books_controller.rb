@@ -51,7 +51,7 @@ class Admin::BooksController < ApplicationController
           .permit(:title, :author, :pub_name, :pub_year, :edit_num,
                   :page, :series_name, :remark, :isbn, :copy, :keyword,
                   :price, :barcode, :class, :shelf_class, :shelf_num,
-                  :record_date)
+                  :record_date, :image)
   end
 
   def set_book

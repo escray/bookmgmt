@@ -15,7 +15,7 @@ Book.create!(title: '代码整洁之道',
              pub_year: '2009',
              edit_num: '1',
              page: '431',
-             ISBN: '978-7-115-21048-7/TP')
+             isbn: '978-7-115-21048-7/TP')
 
 unless User.exists?(email: 'admin@example.com')
   User.create!(email: 'admin@example.com',
@@ -57,11 +57,10 @@ unless User.exists?(email: 'journal@example.com')
                is_admin: true)
 end
 
-#
-
 departments = %w[人力资源部 企划部 销售部 研发部 测试部 维修部]
 departments.each do |d|
   next if Department.exists?(name: d)
+
   Department.create!(name: d)
 end
 
@@ -77,6 +76,7 @@ des = %w[经济建设取得重大成就 全面深化改革取得重大突破
 
 names.each do |name|
   next if Journal.exists?(name: name)
+
   Journal.create!(name: name,
                   publisher: name + '杂志社',
                   interval: int_array[rand(0..3)],
@@ -93,7 +93,6 @@ unless State.exists?
   State.create(name: '重要', color: '#663399')
   State.create(name: '在馆', color: '#990000')
 end
-#
 
 docs = %w[高德地图发布年度报告济南蝉联“首堵之城”
           上海检察：“套路贷”案件受害人多为有房族
@@ -157,7 +156,7 @@ docs = %w[高德地图发布年度报告济南蝉联“首堵之城”
           石油行业开启新一轮周期（经济透视）
           德国发生一起严重交通事故致48人受伤
           全球掀起假新闻“阻击战”（环球走笔）
-          利比亚首都机场附近发生武装冲突
+          利���亚首都机场附近发生武装冲突
           突尼斯出台措施回应民生诉求
           联合国机构强调将继续为巴勒斯坦难民服务
           暂停承认以色列国?既往协议不再有效
@@ -342,7 +341,6 @@ docs = %w[高德地图发布年度报告济南蝉联“首堵之城”
 tags = %w[测试 任务 工作 学习 生活 人物]
 status = %w[available lend]
 level = %w[open internal sensitive secret classified]
-#
 docs.each do |doc|
   next if Doc.exists?(name: doc)
 
