@@ -35,7 +35,6 @@ Rails.application.routes.draw do
         post :bulk_update
         post :import
       end
-
     end
 
     resources :versions do
@@ -79,7 +78,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :books, only: %i[index show]
+  # resources :books, only: %i[index show]
+  resources :books do
+    member do
+      post :add_to_cart
+    end
+  end
 
   resources :pubs, only: %i[index show]
 
