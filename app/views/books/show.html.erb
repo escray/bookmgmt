@@ -1,6 +1,6 @@
 <% title(@book.title) %>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <% if @book.image.present? %>
       <%= image_tag(@book.image.medium.url, class: "thumbnail") %>
     <% else %>
@@ -16,7 +16,7 @@
     </div>
     <div>
       <p><label>作者：</label><%= @book.author %></p>
-      <p><label>出版社：</label><%= @book.pub_name %></p>
+      <p><label>出版社：</label><%= @book.publisher %></p>
       <p><label>出版时间：</label><%= @book.pub_year %></p>
       <p><label>版次：</label><%= @book.edit_num %></p>
       <p><label>页码：</label><%= @book.page %></p>
@@ -26,6 +26,9 @@
       <p><label>馆藏：</label><%= @book.copy %></p>
       <p><label>价格：</label> ￥ <%= @book.price %></p>
       <p><label>备注：</label><%= @book.remark %></p>
+      <p>
+        <label>简介：</label><%= simple_format(@book.description) %>
+      </p>
       <div class="pull-right">
         <%= link_to("加入借书单", "#", class: "btn btn-primary btn-lg btn-danger") %>
       </div>
