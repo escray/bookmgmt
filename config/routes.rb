@@ -23,6 +23,10 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :books
+
+    resources :pubs
+
     resources :csv_imports
     resources :csv_exports
 
@@ -31,7 +35,6 @@ Rails.application.routes.draw do
         post :bulk_update
         post :import
       end
-
     end
 
     resources :versions do
@@ -74,6 +77,24 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  # resources :books, only: %i[index show]
+  resources :books do
+    member do
+      post :add_to_cart
+    end
+  end
+
+  resources :carts do
+    collection do
+      delete :clean
+      post :checkout
+    end
+  end
+
+  resources :cart_items
+
+  resources :pubs, only: %i[index show]
 
   resources :attachments, only: %i[show new]
 end

@@ -1,0 +1,53 @@
+<% title(@book.title) %>
+  <div class="row">
+    <div class="col-md-4">
+      <% if @book.image.present? %>
+        <%= image_tag(@book.image.medium.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("", class: "thumbnail") %>
+      <% end %>
+    </div>
+    <div class="col-md-6" %="%">
+      <h2><%= @book.title %></h2>
+      <div style="height: 100px;">
+        <p>
+          <%= @book.description %>
+        </p>
+      </div>
+      <div>
+        <p>
+          <label>作者：</label><%= @book.author %></p>
+        <p>
+          <label>出版社：</label><%= @book.publisher %></p>
+        <p>
+          <label>出版时间：</label><%= @book.pub_year %></p>
+        <p>
+          <label>版次：</label><%= @book.edit_num %></p>
+        <p>
+          <label>页码：</label><%= @book.page %></p>
+        <p>
+          <label>丛书：</label><%= @book.series_name %></p>
+        <p>
+          <label>ISBN：</label><%= @book.isbn %></p>
+        <p>
+          <label>主题词：</label><%= @book.keyword %></p>
+        <p>
+          <label>馆藏：</label><%= @book.copy %></p>
+        <p>
+          <label>价格：</label>
+          ￥
+          <%= @book.price %></p>
+        <p>
+          <label>备注：</label><%= @book.remark %></p>
+        <p>
+          <label>简介：</label><%= simple_format(@book.description) %>
+        </p>
+        <div class="pull-right">
+          <% if @book.copy.present? && @book.copy > 0 %>
+            <%= link_to("加入借书单", add_to_cart_book_path(@book), method: :post, class: "btn btn-primary btn-lg btn-danger") %>
+          <% else %>
+            已借出
+          <% end %>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,12 @@
+<header>
+  <h3>编辑图书</h3>
+</header>
+<%= simple_form_for [:admin, @book] do |f| %>
+<%= render partial: "form", locals: { f: f } %>
+<% if @book.image.present? %>
+  <label>图书封面</label><br/>
+  <%= image_tag(@book.image.thumb.url) %>
+<% end %>
+<%= f.input :image, as: :file, label: '更新封面' %>
+<%= f.submit "更新图书", data: { disable_with: "正在更新" }, class: "btn btn-primary" %>
+<% end %>

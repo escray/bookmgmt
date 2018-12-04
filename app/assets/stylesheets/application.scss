@@ -13,6 +13,7 @@
 
 header {
   @extend .page-header;
+
   position: relative;
   padding-bottom: 0px;
 
@@ -23,6 +24,7 @@ header {
 
 ul.actions {
   @extend .list-unstyled;
+
   @extend .list-inline;
 
   bottom: -2px;
@@ -67,7 +69,7 @@ a.index {
   @extend .btn-info;
 
   &:before {
-    @extend .fa-files-o
+    @extend .fa-files-o;
   }
 }
 
@@ -77,6 +79,7 @@ form {
 
 body {
   padding-top: 70px;
+  font-size: 18px;
 }
 
 .page-header {
@@ -92,9 +95,7 @@ body {
   }
 }
 
-ul.actions {
-
-}
+ul.actions {}
 
 #docs li, #states li {
   padding-bottom: 10px;
@@ -114,6 +115,7 @@ ul.actions {
 
 a.list {
   @extend .btn;
+
   @extend .btn-info;
 }
 

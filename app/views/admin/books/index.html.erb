@@ -1,0 +1,54 @@
+<header>
+  <h3>图书列表</h3>
+  <% admins_only do %>
+    <ul class="actions">
+      <li>
+        <%= link_to "新增图书", new_admin_book_path, class: "new" %>
+      </li>
+    </ul>
+  <% end %>
+</header>
+<table class="table">
+
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width="80">封面</th>
+      <th>书名</th>
+      <th>作者</th>
+      <th>出版社</th>
+      <th>出版时间</th>
+      <th>管理操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.id %></td>
+        <td>
+          <%= link_to book_path(book) do %>
+          <% if book.image.present? %>
+            <%= image_tag(book.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag("", class: "thumbnail") %>
+          <% end %>
+        <% end %>
+      </td>
+      <td><%= link_to(book.title, book_path(book)) %></td>
+      <td>
+        <%= book.author %>
+      </td>
+      <td>
+        <%=book.publisher %>
+      </td>
+      <td>
+        <%= book.pub_year %>
+      </td>
+      <td>
+        <%= link_to "修改", edit_admin_book_path(book), class: "edit" %>
+        <%= link_to "删除", admin_book_path(book), method: :delete, data: { confirm: "确定要删除这本图书么？"}, class: "delete" %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

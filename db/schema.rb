@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180911025838) do
+ActiveRecord::Schema.define(version: 2018_12_04_103839) do
 
   create_table "attachments", force: :cascade do |t|
     t.string "file"
@@ -19,6 +19,52 @@ ActiveRecord::Schema.define(version: 20180911025838) do
     t.datetime "updated_at", null: false
     t.string "description"
     t.index ["doc_id"], name: "index_attachments_on_doc_id"
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "subheading"
+    t.string "author"
+    t.string "series_name"
+    t.string "language", default: "中文"
+    t.string "original_name"
+    t.string "publisher"
+    t.string "translator"
+    t.string "editor"
+    t.string "pub_date"
+    t.string "pub_year"
+    t.string "edit_num", default: "1"
+    t.integer "page"
+    t.string "remark"
+    t.string "isbn"
+    t.integer "copy", default: 1
+    t.string "keyword"
+    t.decimal "price"
+    t.string "barcode"
+    t.string "image"
+    t.string "rate"
+    t.string "rate_num"
+    t.string "format", default: "平装"
+    t.text "description"
+    t.string "book_class"
+    t.string "shelf_class"
+    t.string "shelf_num"
+    t.datetime "record_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "cart_id"
+    t.integer "book_id"
+    t.integer "quantity", default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -138,14 +184,22 @@ ActiveRecord::Schema.define(version: 20180911025838) do
     t.index ["shortname"], name: "index_journals_on_shortname", unique: true
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "borrower"
+    t.datetime "borrow_at"
+    t.datetime "due_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "title"
-    t.text "description"
+    t.text "descriptiondocs"
     t.integer "quantity"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
   end
 
   create_table "roles", force: :cascade do |t|
