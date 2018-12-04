@@ -6,6 +6,9 @@
       <thead>
         <th colspan="2">图书信息</th>
         <th>数量</th>
+        <th>操作
+
+        </th>
       </thead>
       <tbody>
         <% current_cart.cart_items.each do |cart_item| %>
@@ -25,14 +28,19 @@
           <td>
             <%= cart_item.quantity %>
           </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br/>
-  <hr/>
-  <div class="checkout clearfix">
-    <%= link_to("预约", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
-  </div>
+          <td>
+            <%= link_to cart_item_path(cart_item.book_id), method: :delete do %>
+            <i class="fa fa-trash"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<hr/>
+<div class="checkout clearfix">
+  <%= link_to("预约", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+</div>
 </div>
 </div>
