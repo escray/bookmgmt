@@ -9,9 +9,13 @@ class BooksController < ApplicationController
 
   def add_to_cart
     # redirect_to :back
-    current_cart.add_book_to_cart(@book)
+    if !current_cart.books.include?(@book)
+      current_cart.add_book_to_cart(@book)
+      flash[:notice] = "你已成功将 #{@book.title} 加入借书单"
+    else
+      flash[:warning] = '借书单中已有'
+    end
     redirect_to books_path
-    flash[:notice] = '加入借书单'
   end
 
   private
