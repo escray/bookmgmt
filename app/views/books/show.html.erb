@@ -43,7 +43,11 @@
           <label>简介：</label><%= simple_format(@book.description) %>
         </p>
         <div class="pull-right">
-          <%= link_to("加入借书单", add_to_cart_book_path(@book), method: :post, class: "btn btn-primary btn-lg btn-danger") %>
+          <% if @book.copy.present? && @book.copy > 0 %>
+            <%= link_to("加入借书单", add_to_cart_book_path(@book), method: :post, class: "btn btn-primary btn-lg btn-danger") %>
+          <% else %>
+            已借出
+          <% end %>
         </div>
       </div>
     </div>

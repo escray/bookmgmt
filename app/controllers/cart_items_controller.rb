@@ -15,7 +15,13 @@ class CartItemsController < ApplicationController
   def update
     @cart = current_cart
     @cart_item = @cart.cart_items.find_by(book_id: params[:id])
-    @cart_item.update(cart_item_params)
+
+    if @cart_item.book.copy >= cart_item_params[:quantity].to_i
+      @cart_item.update(cart_item_params)
+      flash[:notice] = '成功变更数量'
+    else
+      flash[:warning] = '数量不足'
+    end
 
     redirect_to carts_path
   end
