@@ -22,5 +22,7 @@ module Filemgmt
     Time::DATE_FORMATS.merge!(default: '%Y-%m-%d',
                               ymd: '%Y-%m-%d',
                               full: '%Y/%m/%d %I:%M %p')
+
+    Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
   end
 end
