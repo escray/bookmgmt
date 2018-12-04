@@ -9,6 +9,7 @@ class BooksController < ApplicationController
 
   def add_to_cart
     # redirect_to :back
+    current_cart.add_book_to_cart(@book)
     redirect_to books_path
     flash[:notice] = '加入借书单'
   end
