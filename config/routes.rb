@@ -85,6 +85,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :carts
+
   resources :pubs, only: %i[index show]
 
   resources :attachments, only: %i[show new]
