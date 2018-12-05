@@ -1,4 +1,3 @@
-#
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -8,6 +7,7 @@ class User < ApplicationRecord
 
   scope :excluding_archived, -> { where(archived_at: nil) }
   has_many :roles
+  has_many :orders
 
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
