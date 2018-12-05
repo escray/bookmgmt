@@ -1,6 +1,8 @@
 class Order < ApplicationRecord
   belongs_to :user
 
-  validates :borrower, present: true
-  validates :borrow_at, present: true
+  validates :borrower, presence: true
+  validates :borrow_at, presence: true
+
+  has_many :borrow_lists
 end

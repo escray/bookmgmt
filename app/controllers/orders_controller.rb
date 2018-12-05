@@ -5,16 +5,28 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.user = current_user
+    # @order.total = cart_items.total
     if @order.save
+      current_cart.cart_items.each do |cart_item|
+        borrow_list = BorrowList.new
+        borrow_list.order = @order
+        borrow_list.book = cart_item.book
+        borrow_list.quantity = cart_item.quantity
+        borrow_list.save
+      end
       redirect_to order_path(@order)
     else
       render 'carts/checkout'
     end
   end
 
+  def show
+    @order = Order.find(params[:id])
+  end
+
   private
 
   def order_params
-    params.require(:order).permit(:borrow_at, :due_at)
+    params.require(:order).permit(:borrower, :borrow_at, :due_at)
   end
 end
