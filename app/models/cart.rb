@@ -12,4 +12,12 @@ class Cart < ApplicationRecord
   def clean!
     cart_items.destroy_all
   end
+
+  def total
+    sum = 0
+    cart_items.each do |cart_item|
+      sum += cart_item.quantity if cart_item.book.present?
+    end
+    sum
+  end
 end
