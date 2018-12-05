@@ -8,7 +8,41 @@
           <th>数量</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <% @order.borrow_lists.each do |borrow_list| %>
+          <tr>
+            <td><%= borrow_list.book.title %></td>
+            <td><%= borrow_list.quantity %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="total clearfix">
+      <span class="pull-right">总计
+        <%= @order.total %>
+        本</span>
+    </div>
+
+    <h2>借阅情况</h2>
+    <table class="table table-striped table-bordered">
+      <tbody>
+        <tr>
+          <td>借阅人</td>
+
+          <td><%= @order.borrower %></td>
+        </tr>
+        <tr>
+          <td>借阅时间</td>
+
+          <td><%= @order.borrow_at %></td>
+        </tr>
+        <tr>
+          <td>归还时间</td>
+
+          <td><%= @order.due_at %></td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>
