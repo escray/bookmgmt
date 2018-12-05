@@ -92,6 +92,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :orders
+
   resources :cart_items
 
   resources :pubs, only: %i[index show]

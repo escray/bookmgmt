@@ -22,36 +22,27 @@ ActiveRecord::Schema.define(version: 2018_12_04_103839) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "subheading"
+    t.string "title"
     t.string "author"
-    t.string "series_name"
-    t.string "language", default: "中文"
-    t.string "original_name"
-    t.string "publisher"
-    t.string "translator"
-    t.string "editor"
-    t.string "pub_date"
+    t.string "pub_name"
     t.string "pub_year"
-    t.string "edit_num", default: "1"
+    t.string "edit_num"
     t.integer "page"
+    t.string "series_name"
     t.string "remark"
     t.string "isbn"
-    t.integer "copy", default: 1
+    t.integer "copy"
     t.string "keyword"
     t.decimal "price"
     t.string "barcode"
-    t.string "image"
-    t.string "rate"
-    t.string "rate_num"
-    t.string "format", default: "平装"
-    t.text "description"
     t.string "book_class"
     t.string "shelf_class"
     t.string "shelf_num"
     t.datetime "record_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.string "image"
   end
 
   create_table "cart_items", force: :cascade do |t|
@@ -195,11 +186,12 @@ ActiveRecord::Schema.define(version: 2018_12_04_103839) do
 
   create_table "products", force: :cascade do |t|
     t.string "title"
-    t.text "descriptiondocs"
+    t.text "description"
     t.integer "quantity"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "roles", force: :cascade do |t|
