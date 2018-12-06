@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_091410) do
+ActiveRecord::Schema.define(version: 2018_12_06_100610) do
 
   create_table "attachments", force: :cascade do |t|
     t.string "file"
@@ -200,6 +200,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_091410) do
     t.datetime "due_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "token"
   end
 
   create_table "products", force: :cascade do |t|
