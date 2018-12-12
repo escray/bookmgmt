@@ -3,7 +3,7 @@ class Admin::OrdersController < ApplicationController
   skip_after_action :verify_authorized, :verify_policy_scoped
   before_action :authenticate_user!
   before_action :admin_required
-  before_action :set_order
+  before_action :set_order, only: %i[show prepare cancel lend return]
 
   def index
     @orders = Order.order('id DESC')
@@ -15,22 +15,22 @@ class Admin::OrdersController < ApplicationController
 
   def prepare
     @order.prepare!
-    redirect_to :back
+    redirect_back fallback_location: admin_order_path
   end
 
   def cancel
     @order.cancel_order!
-    redirect_to :back
+    redirect_back fallback_location: admin_order_path
   end
 
   def lend
     @order.lend!
-    redirect_to :back
+    redirect_back fallback_location: admin_order_path
   end
 
   def return
     @order.return_book!
-    redirect_to :back
+    redirect_back fallback_location: admin_order_path
   end
 
   private

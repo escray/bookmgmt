@@ -1,0 +1,16 @@
+<div style="padding: 10px; float: right;">
+  <% case order.aasm_state %>
+    <% when "borrow_required" %>
+      <%= link_to("取消订单", cancel_admin_order_path(order), method: :post, class: "btn btn-default btn-sm") %>
+      <%= link_to("准备图书", prepare_admin_order_path(order), method: :post, class: "btn btn-default btn-sm") %>
+      <% when "prepared" %>
+        <%= link_to("取消订单", cancel_admin_order_path(order), method: :post, class: "btn btn-default btn-sm") %>
+        <%= link_to("借出", lend_admin_order_path(order), method: :post, class: "btn btn-default btn-sm") %>
+        <% when "lended" %>
+          <%= link_to("归还", return_admin_order_path(order), method: :post, class: "btn btn-default btn-sm") %>
+          <% when "order_cancelled" %>
+            <span class="label label-default">借阅已取消</span>
+            <% when "book_returned" %>
+              <span class="label label-default">图书已归还</span>
+            <% end %>
+          </div>

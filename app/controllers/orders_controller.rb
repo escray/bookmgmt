@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.user = current_user
+    @order.aasm_state = 'borrow_required'
     # @order.total = cart_items.total
     if @order.save
       current_cart.cart_items.each do |cart_item|
