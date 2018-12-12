@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     end
 
     resources :books
+    resources :orders
 
     resources :pubs
 
