@@ -99,4 +99,8 @@ Rails.application.routes.draw do
   resources :pubs, only: %i[index show]
 
   resources :attachments, only: %i[show new]
+
+  namespace :account do
+    resources :orders
+  end
 end

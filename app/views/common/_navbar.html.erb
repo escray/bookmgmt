@@ -52,6 +52,9 @@
               </li>
             <% end %>
             <li>
+              <%= link_to("借阅历史", account_orders_path) %>
+            </li>
+            <li>
               <%= link_to(content_tag(:i, ' 注销', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %>
             </li>
           </ul>
