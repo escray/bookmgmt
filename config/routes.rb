@@ -24,7 +24,14 @@ Rails.application.routes.draw do
     end
 
     resources :books
-    resources :orders
+    resources :orders do
+      member do
+        post :cancel
+        post :prepare
+        post :lend
+        post :return
+      end
+    end
 
     resources :pubs
 

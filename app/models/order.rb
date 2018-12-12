@@ -12,7 +12,7 @@ class Order < ApplicationRecord
       transitions from: :borrow_required, to: :prepared
     end
 
-    event :deliver do
+    event :lend do
       transitions from: :prepared, to: :lended
     end
 
