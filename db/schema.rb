@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_100610) do
+ActiveRecord::Schema.define(version: 2018_12_12_014037) do
 
   create_table "attachments", force: :cascade do |t|
     t.string "file"
@@ -201,6 +201,8 @@ ActiveRecord::Schema.define(version: 2018_12_06_100610) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "token"
+    t.string "aasm_state", default: "order_placed"
+    t.index ["aasm_state"], name: "index_orders_on_aasm_state"
   end
 
   create_table "products", force: :cascade do |t|

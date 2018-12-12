@@ -1,4 +1,30 @@
 class Order < ApplicationRecord
+  include AASM
+
+  aasm do
+    state :borrow_required, initial: true
+    state :prepared
+    state :lended
+    state :order_cancelled
+    state :book_returned
+
+    event :prepare do
+      transitions from: :borrow_required, to: :prepared
+    end
+
+    event :deliver do
+      transitions from: :prepared, to: :lended
+    end
+
+    event :return_book do
+      transitions from: :lended, to: :book_returned
+    end
+
+    event :cancel_order do
+      transitions from: %i[order_placed prepared], to: :order_cancelled
+    end
+  end
+
   before_create :generate_token
   belongs_to :user
 
