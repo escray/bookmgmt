@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require rails-ujs
+//= require turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap-sprockets
