@@ -74,6 +74,8 @@ gem 'axlsx_rails'
 gem 'zip-zip'
 # gem 'rubyzip', '~> 0.9.9'
 
+# TODO: markdown
+# gem 'redcarped'
 
 # paginate
 gem 'kaminari'

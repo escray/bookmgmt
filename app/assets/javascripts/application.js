@@ -15,6 +15,9 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
+//= require moment/min/moment.min
+//= require propellerkit/dist/js/bootstrap.min
+//= require owl.carousel/dist/owl.carousel.min
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap-sprockets
@@ -23,4 +26,5 @@
 //= require select2
 //= require validator.min
 //= require Chart.min
+//= require_tree ./users/layouts
 //= require_tree .

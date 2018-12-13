@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'journals#index'
+  # root 'journals#index'
+  root 'static_pages#show', page: 'home'
   get '/faq' => 'pages#faq'
   get '/journals/:journal_id/docs/:doc_id/items/:id' => 'journal_docs#lend', as: :lend_doc_item
 

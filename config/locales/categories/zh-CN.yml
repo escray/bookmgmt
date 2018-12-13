@@ -1,0 +1,10 @@
+en:
+  categories:
+    show:
+      category: "类别"
+      collection: "合辑"
+      created_at: "最新"
+      title: "书名"
+      public_date: "出版时间"
+    index:
+      all_categories: "所有类别"

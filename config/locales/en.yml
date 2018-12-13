@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  company: remoter
+  app_name: Book Management system
+  slogan: Find Beauty in Books
   secretdoc: Secret Document
   journal_list: Journal List
   num: No.
@@ -82,3 +85,25 @@ en:
     versions_mgmt: Version Management
     dept_mgmt: Department Management
     doc_edit: Edit Document
+home:
+    slide:
+      slide1_title1: "FJP Book Manage System"
+      slide1_title2: "Since 2017"
+      slide2_title1: "AWESOME"
+      slide2_title2: "WE MAKE IT"
+    guide:
+      books: "Books"
+      books_content: "Our company library system with thousands of books in many aspects is always ready for you anytime you need."
+      blogs: "Blogs"
+      blog_content: "Write your opinion or feeling about a book and share it to everybody. Sharing is caring."
+      borrow: "Borrow"
+      borrow_content: "You can borrow any book you want, you can also create a request to update a book that not in the system yet."
+      feedback: "Feedback"
+      feedback_content: "Every page need your feedback to make it better. Give us your feedback to make our system AWESOME!"
+      start_explore: "Start  Explore ->"
+      choose_book: "First, pick a book."
+      feedback_link: "Give us you opinion."
+    recommend: "Recommend Book"
+    recommend_details: "You make like those books"
+    new_book: "New Book"
+    top_author: "Top Author"

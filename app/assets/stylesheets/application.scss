@@ -10,6 +10,7 @@
 @import "admin/application";
 @import "admin/users.scss";
 @import "responsive";
+@import "users/home.scss";
 
 header {
   @extend .page-header;
