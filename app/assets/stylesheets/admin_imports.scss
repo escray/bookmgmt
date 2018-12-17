@@ -5,17 +5,11 @@
 @import "select2-bootstrap";
 @import "font-awesome";
 @import "jquery-ui";
-@import "journals";
-@import "docs";
-@import "application";
-@import "admin/application";
-@import "admin/users.scss";
-@import "admin/docs.scss";
 @import "responsive";
-
 
 header {
   @extend .page-header;
+
   position: relative;
   padding-bottom: 0px;
 

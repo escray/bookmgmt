@@ -1,0 +1,8 @@
+/*
+ *= require_self
+ *= require admin_imports
+ *= require bootstrap/dist/css/bootstrap.min
+ *= require propellerkit/dist/css/propeller.min
+ *= require font-awesome
+ *= require_tree ./admin
+ */
