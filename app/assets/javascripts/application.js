@@ -15,14 +15,14 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
-//= require moment/min/moment.min
-//= require propellerkit/dist/js/bootstrap.min
-//= require owl.carousel/dist/owl.carousel.min
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN
+//= require moment/min/moment.min
+
+//= require owl.carousel/dist/owl.carousel.min
 //= require select2
 //= require validator.min
 //= require Chart.min

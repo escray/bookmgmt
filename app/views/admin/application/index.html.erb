@@ -1,7 +1,6 @@
-<header>
-  <h3>系统管理</h3>
-</header>
-<%
+<div>
+
+  <%
   @journals = Journal.all
   journal_names = @journals.map { |j| j.name }
 
@@ -38,21 +37,24 @@
   }
 %>
 
-<canvas id="amountChart" width="400" height="200"></canvas>
-<script>
-var ctxAmount = document.getElementById("amountChart");
-var ctxChart = new Chart(ctxAmount, {
-  type: 'bar',
-  data: <%= raw @docs_amounts.to_json %>,
-  option: {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero:true
+    <canvas id="amountChart" width="400" height="200"></canvas>
+  </div>
+  <script>
+    var ctxAmount = document.getElementById("amountChart");
+    var ctxChart = new Chart(ctxAmount, {
+      type: 'bar',
+      data: <%= raw @docs_amounts.to_json %>,
+      option: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ]
         }
-      }]
-    }
-  }
+      }
 
-})
-</script>
+    })
+  </script>
