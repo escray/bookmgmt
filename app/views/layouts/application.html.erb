@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       <% if content_for?(:title) %>
         <%= yield(:title) %>
@@ -10,26 +13,27 @@
     </title>
     <%= csrf_meta_tags %>
 
-      <%= stylesheet_link_tag 'application', media: 'all',
-          'data-turbolinks-track' => true %>
-      <%= javascript_include_tag 'application',
-          'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': "reload" %>
     <style>
       <% State.all.each do |state| %>
-        .state-<%= state.name %> {
-          background-color: <%= state.color %>;
-        }
+        .state-<%= state.name %>
+        { background-color:
+        <%= state.color %>; }
       <% end %>
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <div class="container">
+
+    <div class="wrapper">
       <%= render "common/navbar" %>
       <%= render "common/flashes" %>
       <%= yield %>
     </div>
     <%= render "common/footer" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': "reload" %>
+    <% if File.exist? Rails.root.join("app/assets/javascripts/users", params[:controller] + ".js") %>
+      <%= javascript_include_tag ("users/" + params[:controller]), "data-turbolinks-track": "reload" %>
+    <% end %>
   </body>
 </html>
