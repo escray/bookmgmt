@@ -24,6 +24,9 @@ truncate:
   book:
     title: 45
     desc: 30
+  magazine:
+    title: 45
+    desc: 60
 blog:
   dashboard:
     limit: 10

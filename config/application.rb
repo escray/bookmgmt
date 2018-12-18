@@ -11,6 +11,7 @@ module Filemgmt
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = 'zh-CN'
+    config.i18n.load_path += Dir["#{Rails.root}/config/locales/**/*.{rb,yml}"]
     config.time_zone = 'Beijing'
 
     config.action_view.sanitized_allowed_tags =

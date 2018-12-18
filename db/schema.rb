@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_12_014037) do
+ActiveRecord::Schema.define(version: 2018_12_18_023611) do
 
   create_table "attachments", force: :cascade do |t|
     t.string "file"
@@ -190,6 +190,37 @@ ActiveRecord::Schema.define(version: 2018_12_12_014037) do
     t.string "image"
     t.index ["row_order"], name: "index_journals_on_row_order"
     t.index ["shortname"], name: "index_journals_on_shortname", unique: true
+  end
+
+  create_table "magazines", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "management"
+    t.string "subheading"
+    t.string "editor"
+    t.string "publisher"
+    t.string "pub_addr"
+    t.string "language", default: "中文"
+    t.string "original_name"
+    t.string "created_year"
+    t.string "post_num"
+    t.string "cn_num"
+    t.string "issn"
+    t.string "pub_cycle"
+    t.string "pub_period"
+    t.integer "year_issue"
+    t.decimal "per_price"
+    t.decimal "year_price"
+    t.integer "page"
+    t.string "format"
+    t.string "source", default: "邮局订阅"
+    t.boolean "subscribe", default: true
+    t.integer "copy", default: 1
+    t.string "image"
+    t.string "description"
+    t.string "status"
+    t.string "status_remark"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|

@@ -1,0 +1,48 @@
+<div class="col-sm-4">
+  <div class="box-outer">
+    <div class="box">
+      <div class="frame">
+        <div class="caption">
+          <%= link_to mag, "data-turbolinks": false do %>
+          <i class="fa fa-eye" aria-hidden="true"></i>
+        <% end %>
+      </div>
+      <!--caption-->
+      <div class="img-frame">
+        <%= link_to mag, "data-turbolinks": false do %>
+        <% if mag.image.present? %>
+          <img src="<%= mag.image.medium.url %>" class="img-responsive" alt="<%= mag.title %>">
+        <% else %>
+          <img src="<%= asset_path "default-book.png" %>" class="img-responsive" alt="<%= mag.title %>">
+        <% end %>
+      <% end %>
+    </div>
+    <!--img-frame-->
+  </div>
+  <!--frame-->
+
+  <div class="text-column">
+    <span></span>
+    <h3>
+      <%= link_to mag.title.truncate(Settings.truncate.magazine.title), mag, "data-turbolinks": false %>
+    </h3>
+    <em><%= mag.description.truncate(Settings.truncate.magazine.desc) %></em>
+    <div class="review-start">
+      <div class="rating_stars">
+        <div class="rating_down">
+          <div class="rating_up" style="width:100%"></div>
+          <!--rating_up-->
+        </div>
+        <!--rating_down-->
+      </div>
+      <!--rating_stars-->
+    </div>
+    <!--review-start-->
+  </div>
+  <!--text-column-->
+</div>
+<!--box-->
+</div>
+<!--box-outer-->
+</div>
+<!--col-sm-4-->
