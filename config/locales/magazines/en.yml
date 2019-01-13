@@ -1,3 +1,5 @@
 "en":
   magazines:
     index: Explore All Magazines
+    show:
+      magazine: Magazine

@@ -1,6 +1,9 @@
 search:
   autocomplete:
     limit: 10
+magazines:
+  issue:
+    limit: 9
 admin:
   users:
     index:

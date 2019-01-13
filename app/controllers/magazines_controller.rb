@@ -1,12 +1,13 @@
 class MagazinesController < ApplicationController
   before_action :set_magazine, only: %i[show]
+  before_action :load_magazines, only: %i[index show]
   skip_after_action :verify_authorized, :verify_policy_scoped
 
-  def index
-    @magazines = Magazine.all
-  end
+  def index; end
 
-  def show; end
+  def show
+    @issues = @magazine.issues.page(params[:page]).per(Settings.magazines.issue.limit)
+  end
 
   private
 
@@ -15,5 +16,9 @@ class MagazinesController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     flash[:alert] = '您所查看的杂志不存在'
     redirect_to magazines_path
+  end
+
+  def load_magazines
+    @magazines = Magazine.all
   end
 end

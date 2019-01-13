@@ -24,7 +24,7 @@ class CreateMagazines < ActiveRecord::Migration[5.2]
       t.boolean :subscribe, default: true
       t.integer :copy, default: 1
       t.string :image
-      t.string :description
+      t.text :description
       t.string :status
       t.string :status_remark
       t.timestamps

@@ -11,7 +11,7 @@
 
 # Book.create!([
 #                { title: '冷战在亚洲',
-#                  subheading: '朝鲜��争与中国出兵朝鲜',
+#                  subheading: '朝鲜��争���中国出兵朝鲜',
 #                  series_name: '冷战国际史研究文库',
 #                  author: '沈志华',
 #                  publisher: '九州出版社',
@@ -115,140 +115,278 @@
 #              rate_num: '',
 #              description: '')
 #
-
-Magazine.create!([{
-                   title: '三联生活周刊',
-                   management: '中国出版集团',
-                   editor: '朱伟',
-                   publisher: '三联生活周刊',
-                   created_year: '1995',
-                   cn_num: 'CN11-3221/C',
-                   issn: '9771005360000',
-                   pub_cycle: '周刊',
-                   pub_period: '每星期一',
-                   year_issue: '52',
-                   per_price: 15,
-                   year_price: 780,
-                   page: 168,
-                   source: '邮局订阅',
-                   copy: 1,
-                   image: File.open(Rails.root + 'public/uploads/image/sl.jpeg'),
-                   description: '《三联生活周刊》由中国出版集团下属的生活•读书•新知三联书店主办，是一份具有良好的声誉，在主流人群中有着广泛影响力的综合性新闻和文化类周刊。
-                   《三联生活周刊》以最快速度追踪热点新闻，更多关注新时代中的新生活观，以独特的视角、深度的思考和一贯秉持人文情怀，为读者忠实记录着世界和中国发生的变化，一本杂志和他倡导的生活 已被越来越多的人所认可。'
-                 }, {
-                   title: '南风窗',
-                   publisher: '南风窗',
-                   pub_addr: '广东',
-                   created_year: '1985',
-                   cn_num: 'CN44-1019/GZ',
-                   issn: '9771004044077',
-                   pub_cycle: '半月刊',
-                   year_issue: 24,
-                   per_price: 15,
-                   year_price: 360,
-                   page: 96,
-                   format: '16开',
-                   source: '邮局订阅',
-                   copy: 2,
-                   image: File.open(Rails.root + 'public/uploads/image/nf.jpeg'),
-                   description: '中国最具影响力的新闻杂志——《南风窗》
-
-                   《南风窗》杂志1985年创刊。二十多年来一直坚持严肃的新闻理念，敏锐而深刻的新闻价值探索与判断，强调建设性与分寸感的务实新闻操作，形成了特有的品质和气质，形成了对社会问题特有的解读和视角，形成了特有的文采风格，因而，吸引了中国社会的主流人群，并得到读者认可，巳经成为中国最具影响力的新闻杂志。《南风窗》与共和国同行，深切关注中国社会的转型问题，以开放的心态透视全球化背景下的世界形势，紧密追踪中国政经领域和社会文化变革中的重大事件、热点难点、汇聚主流精英和人民大众的声音，提供有建设性的思考，形成推动中国社会前行的精神合力。
-
-                   《南风窗》是由中共广州市委领导亲自批准创办的时事���治类综合月刊。自1985年4月创刊以来，依托改革开放的前沿阵地，通过架设理论与实践、政治和经济、领导者和被领导者、几代人之间的桥梁，宣传新观念、揭示新趋势、扶持新事物、促进新潮流，成为广东期刊界的一面旗帜，被誉为“刊林奇葩”。',
-                   status: ''
-                 }, {
-                   title: '环球人物',
-                   management: '人民日报社',
-                   publisher: '人民日报社',
-                   cn_num: 'CN11-5490/C',
-                   issn: '9776675617523',
-                   pub_cycle: '半月刊',
-                   year_issue: 24,
-                   per_price: 15,
-                   year_price: 360,
-                   page: 96,
-                   copy: 3,
-                   image: File.open(Rails.root + 'public/uploads/image/rw.jpeg'),
-                   description: '《环球人物》由人民日报社主办，是中国第一份具有全球视野的人物类期刊。
-
-                   《环球人物》由人民日报社主管、主办，是国内最权威、最可读的人物期刊。依托人民日报和环球时报的资源优势，《环球人物》300余位国内外记者追踪报道世界政治、经济、科技、文化、社会等各个领域热点人物，为读者反映全球时事，解读人生智慧，揭示成功秘诀，讲述他们背后的故事。'
-
-                 }, {
-                   title: '现代兵器',
-                   publisher: '现代兵器',
-                   cn_num: 'CN11-1761/TJ',
-                   issn: '9787540852948',
-                   pub_cycle: '月刊',
-                   pub_period: '',
-                   year_issue: 12,
-                   per_price: 15,
-                   year_price: 180,
-                   page: 70,
-                   format: '16开',
-                   copy: 5,
-                   image: File.open(Rails.root + 'public/uploads/image/bq.jpeg'),
-                   description: '杂志融技术性、知识性和趣味性于一体，向广大读者展示了一个丰富多彩的兵器天地。
-
-                   《现代兵器》是中国兵器工业情报研究所主办的一本综合性军事科技月刊，其宗旨是使读者全面、系统、及时、准确地了解世界各国、各地区三军装备及其技术的现状及未来发展。'
-                 }, {
-                   title: '现代舰船',
-                   subheading: 'Ｂ版',
-                   management: '中国船舶重工集团公司',
-                   publisher: '现代舰船杂志社',
-                   created_year: '1963',
-                   cn_num: 'CN11-1884/U',
-                   issn: '1672-7649',
-                   pub_cycle: '月刊',
-                   pub_period: '',
-                   year_issue: 12,
-                   per_price: 15,
-                   year_price: 780,
-                   page: 63,
-                   copy: 1,
-                   image: File.open(Rails.root + 'public/uploads/image/jc.jpeg'),
-                   description: '《现代舰船》杂志由国家科学技术部，新闻出版总署批准开办，由中国著名的舰船科研和生产集团--中国船舶重工集团公司主管，中国知名舰船科研支撑机构--中国船舶信息中心主办，是由中国舰船类期刊专业出版机构--现代舰船杂志社承办其编辑、出版和全国范围内的发行工作的国防科工委重点刊物之一。'
-                 }, {
-                   title: '看天下',
-                   publisher: '看天下',
-                   created_year: '2005',
-                   cn_num: 'CN64-1057/C	',
-                   issn: '9771673265324',
-                   pub_cycle: '旬刊',
-                   pub_period: '每月8、18、28日',
-                   year_issue: 36,
-                   per_price: 12,
-                   year_price: 432,
-                   page: 232,
-                   format: '16开',
-                   copy: 3,
-                   image: File.open(Rails.root + 'public/uploads/image/tx.jpeg'),
-                   description: '《vista 看天下》主要以政治、历史、社会（包括财经）为主要内，回顾精彩历史事件，报道和评论时政热点。也有关于文娱和日常生活常识及最新科技小发明介绍的文字，以及一些世界新闻趣图。《vista 看天下》的亮点主要是在于其对所陈诉的历史或政治事件十分客观，尽量让读者能以一个独立的观察者身份去省视一些事件，而不会受到撰稿者的主观感情左右，也就是说《vista 看天下》中所包含的撰稿者主观情绪很少。但对于一些主流道德观念所公认的事件评论，字词中也能感受到作者的讽刺，但仅仅只是一点，相较于一些报纸杂志不负责任地作一些偏激言论哗众取宠、不惜歪曲事实拿含混的字词误导读者来说，是相当难能可贵的。《vista 看天下》也不是一本因没有激烈言辞而显得很乏味的杂志，其向读者所展示的世界，正如其名字一样，能让人有透过这扇明窗一览天下的感觉。'
-                 }, {
-                   title: '空天力量杂志',
-                   publisher: '美国空军大学出版社（Air University Press）',
-                   original_name: 'Air & Space Power',
-                   issn: '1554-2505',
-                   copy: 1,
-                   image: File.open(Rails.root + 'public/uploads/image/kt.jpg'),
-                   description: '《空天力量杂志》的英文是“Air & Space Power Journal”（ASPJ），由美国空军大学出版社（Air University Press）出版。ASPJ 既是美国空军的专业学术杂志，也是全世界空天力量开展对话的主要论坛，在美国和全球军界享有崇高声誉。ASPJ 除英文版之外，已先后推出西班牙文、葡萄牙文、阿拉伯文、法文及中文（简体）共五种语言版本，每种语言版本都有自己的特点和独特内容，由通晓本土语言及文化的编辑组稿。ASPJ 英文版以美国空军和世界各地有英语阅读能力的军事学者为主要读者，以开拓思维，促进专业交流为主旨。ASPJ 的其他语言版本亦本着相同目的，努力满足拉丁美洲、非洲、中东地区、亚洲和欧洲的空海陆军人的专业需求。'
-                   # }, {
-                   #   title: '',
-                   #   management: '',
-                   #   editor: '',
-                   #   publisher: '',
-                   #   created_year: '',
-                   #   cn_num: '',
-                   #   issn: '',
-                   #   pub_cycle: '周刊',
-                   #   pub_period: '每星期一',
-                   #   year_issue: '52',
-                   #   per_price: 15,
-                   #   year_price: 780,
-                   #   page: 168,
-                   #   copy: 1,
-                   #   description: ''
-                 }])
+Issue.create!([{
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 1,
+                barcode: 'sl201801',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201801.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 2,
+                barcode: 'sl201802',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201802.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 3,
+                barcode: 'sl201803',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201803.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 4,
+                barcode: 'sl201804',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201804.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 5,
+                barcode: 'sl201805',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201805.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 6,
+                barcode: 'sl201806',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201806.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 7,
+                barcode: 'sl201807',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201807.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 8,
+                barcode: 'sl201808',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201808.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 9,
+                barcode: 'sl201809',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201809.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 1,
+                barcode: 'sl201801',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201801.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 10,
+                barcode: 'sl201810',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201810.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 10,
+                barcode: 'sl201810',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201810.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 11,
+                barcode: 'sl201811',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201811.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 12,
+                barcode: 'sl201812',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201812.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2018,
+                issue_num: 13,
+                barcode: 'sl201813',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201813.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2014,
+                issue_num: 10,
+                barcode: 'sl201410',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201410.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2015,
+                issue_num: 0o1,
+                barcode: 'sl201501',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201501.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2016,
+                issue_num: 2,
+                barcode: 'sl201602',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201602.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2016,
+                issue_num: 52,
+                barcode: 'sl201652',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201652.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2017,
+                issue_num: 1,
+                barcode: 'sl201701',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201701.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2017,
+                issue_num: 11,
+                barcode: 'sl201711',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201711.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2017,
+                issue_num: 44,
+                barcode: 'sl201744',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201744.jpeg')
+              }, {
+                magazine_id: 1,
+                year: 2017,
+                issue_num: 52,
+                barcode: 'sl201752',
+                cover: File.open(Rails.root + 'public/uploads/image/sl201752.jpeg')
+              }])
+# Magazine.create!([{
+#                    title: '三联生活周刊',
+#                    management: '中国出版集团',
+#                    editor: '朱伟',
+#                    publisher: '三联生活周刊',
+#                    created_year: '1995',
+#                    cn_num: 'CN11-3221/C',
+#                    issn: '9771005360000',
+#                    pub_cycle: '周刊',
+#                    pub_period: '每星期一',
+#                    year_issue: '52',
+#                    per_price: 15,
+#                    year_price: 780,
+#                    page: 168,
+#                    source: '邮局订阅',
+#                    copy: 1,
+#                    image: File.open(Rails.root + 'public/uploads/image/sl.jpeg'),
+#                    description: '《三联生活周刊》由中国出版集团下属的生活•读书•新知三联书店主办，是一份具有良好的声誉，在主流人群中有着广泛影响力的综合性新闻和文化类周刊。
+#                    《三联生活周刊》以最快速度追踪热点新闻���更多关注新时代中的新生活观，以独特的视角、深度的思考和一贯秉持人文情怀，为读者忠实记录着世界和中国发生的变化，一本杂志和他倡导的生活 已被越来越多的人所认可。'
+#                  }, {
+#                    title: '南风窗',
+#                    publisher: '南风窗',
+#                    pub_addr: '广东',
+#                    created_year: '1985',
+#                    cn_num: 'CN44-1019/GZ',
+#                    issn: '9771004044077',
+#                    pub_cycle: '半月刊',
+#                    year_issue: 24,
+#                    per_price: 15,
+#                    year_price: 360,
+#                    page: 96,
+#                    format: '16开',
+#                    source: '邮局订阅',
+#                    copy: 2,
+#                    image: File.open(Rails.root + 'public/uploads/image/nf.jpeg'),
+#                    description: '中国最具影响力的新闻杂志——《南风窗》
+#
+#                    《南风窗》杂志1985年创刊。二十多年来一直坚持严肃的新闻理念，敏锐而深刻的新闻价值探索与判断，强调建设性与分寸感的务实新闻操作，形成了特有的品质和气质，形成了对社会问题特有的解读和视角，形成了特有的文采风格，因而，吸引了中国社会的主流人群，并得到读者认可，巳经成为中国最具影响力的新闻杂志。《南风窗》与共和国同行，深切关注中国社会的转型问题，以开放的心态透视全球化背景下的世界形势，紧密追踪中国政经领域和社会文化变革中的重大事件、热点难点、汇聚主流精英和人民大众的声音，提供有建设性的思考，形成推动中国社会前行的精神合力。
+#
+#                    《南风窗》是由中共广州市委领导亲自批准创办的时事���治类综合月刊。自1985年4月创刊以来，依托改革开放的前沿阵地，通过架设理论与实践、政治和经济、领导者和被领导者、几代人之间的桥梁，宣传新观念、揭示新趋势、扶持新事物、促进新潮流，成为广东期刊界的一面旗帜，被誉为“刊林奇葩”。',
+#                    status: ''
+#                  }, {
+#                    title: '环球人物',
+#                    management: '人民日报社',
+#                    publisher: '人民日报社',
+#                    cn_num: 'CN11-5490/C',
+#                    issn: '9776675617523',
+#                    pub_cycle: '半月刊',
+#                    year_issue: 24,
+#                    per_price: 15,
+#                    year_price: 360,
+#                    page: 96,
+#                    copy: 3,
+#                    image: File.open(Rails.root + 'public/uploads/image/rw.jpeg'),
+#                    description: '《环球人物》由人民日报社主办，是中国第一份具有全球视野的人物类期刊。
+#
+#                    《环球人物》由人民日报社主管、主办，是国内最权威、最可读的人物期刊。依托人民日报和环球时报的资源优势，《环球人物》300余位国内外记者��踪报道世界政治、经济、科技、文化、社会等各个领域热点人物，为读者反映全球时事，解读人生智慧，揭示成功秘诀，讲述他们背后的故事。'
+#
+#                  }, {
+#                    title: '现代兵器',
+#                    publisher: '现代兵器',
+#                    cn_num: 'CN11-1761/TJ',
+#                    issn: '9787540852948',
+#                    pub_cycle: '月刊',
+#                    pub_period: '',
+#                    year_issue: 12,
+#                    per_price: 15,
+#                    year_price: 180,
+#                    page: 70,
+#                    format: '16开',
+#                    copy: 5,
+#                    image: File.open(Rails.root + 'public/uploads/image/bq.jpeg'),
+#                    description: '杂志融技术性、知识性和趣味性于一体，向广大读者展示了一个丰富多彩的兵��天地。
+#
+#                    《现代兵器》是中国兵器工业情报研究所主办的一本综合性军事科技月刊，其宗旨是使读者全面、系统、及时、准确地了解世界各国、各地区三军装备及其技术的现状及未来发展。'
+#                  }, {
+#                    title: '现代舰船',
+#                    subheading: 'Ｂ版',
+#                    management: '中国船舶重工集团公司',
+#                    publisher: '现代舰船杂志社',
+#                    created_year: '1963',
+#                    cn_num: 'CN11-1884/U',
+#                    issn: '1672-7649',
+#                    pub_cycle: '月刊',
+#                    pub_period: '',
+#                    year_issue: 12,
+#                    per_price: 15,
+#                    year_price: 780,
+#                    page: 63,
+#                    copy: 1,
+#                    image: File.open(Rails.root + 'public/uploads/image/jc.jpeg'),
+#                    description: '《现代舰船》杂志由国家科学技术部，新闻出版总署批准开办，由中国著名的舰船科研和生产集团--中国船舶重工集团公司主管，中国知名舰船科研支撑机构--中国船舶信息中心主办，是由中国舰船类期刊专业出版机构--现代舰船杂志社承办其编辑、出版和全国范围内的发行工作的国防科工委重点刊物之一。'
+#                  }, {
+#                    title: '看天下',
+#                    publisher: '看天下',
+#                    created_year: '2005',
+#                    cn_num: 'CN64-1057/C  ',
+#                    issn: '9771673265324',
+#                    pub_cycle: '旬刊',
+#                    pub_period: '每月8、18、28日',
+#                    year_issue: 36,
+#                    per_price: 12,
+#                    year_price: 432,
+#                    page: 232,
+#                    format: '16开',
+#                    copy: 3,
+#                    image: File.open(Rails.root + 'public/uploads/image/tx.jpeg'),
+#                    description: '《vista 看天下》主要以政治、历史、社会（包括财经）为主要内，回顾精彩历史事件，报道和评论时政热点。也有关于文娱和日常生活常识及最新科技小发明介绍的文字，以及一些世界新闻趣图。《vista 看天下》的亮点主要是在于其对所陈诉的历史或政治事件十分客观，尽量让读者能以一个独立的观察者身份去省视一些事件，而不会受到撰稿者的主观感情左右，也就是说《vista 看天下》中所包含的撰稿者主观情绪很少。但对于一些主流道德观念所公认的事件评论，字词中也能感受到作者的讽刺，但仅仅只是一点，相较于一些报纸杂志不负责任地作一些偏激言论哗众取宠、不惜歪曲事实拿含混的字词误导读者来说，是相当难能可贵的。《vista 看天下》也不是一本因没有激烈言辞而显得很乏味的杂志，其向读者所展示的世界，正如其名字一样，能让人有透过这扇明窗一览天下的感觉。'
+#                  }, {
+#                    title: '空天力量杂志',
+#                    publisher: '美国空军大学出版社（Air University Press）',
+#                    original_name: 'Air & Space Power',
+#                    issn: '1554-2505',
+#                    copy: 1,
+#                    image: File.open(Rails.root + 'public/uploads/image/kt.jpg'),
+#                    description: '《空天力量杂志》的英文是“Air & Space Power Journal”（ASPJ），由美国空军大学出版社（Air University Press）出版。ASPJ 既是美国空军的专业学术杂志，也是全世界空天力量开展对话的主要论坛，在美国和全球军界享有崇高声誉。ASPJ 除英文版之外，已先后推出西班牙文、葡萄牙文、阿拉伯文、法文及中文（简体）共五种语言版本，每种语言版本都有自己的特点和独特内容，由通晓本土语言及文化的编辑组稿。ASPJ 英文版以美国空军和世界各地有英语阅读能力的军事学者为主要读者，以开拓思维，促进专业交流为主旨。ASPJ 的其他语言版本亦本着相同目的，努力满��拉丁美洲、非洲、中东地区、亚洲和欧洲的空海陆军人���专业需求。'
+# }, {
+#   title: '',
+#   management: '',
+#   editor: '',
+#   publisher: '',
+#   created_year: '',
+#   cn_num: '',
+#   issn: '',
+#   pub_cycle: '周刊',
+#   pub_period: '每星期一',
+#   year_issue: '52',
+#   per_price: 15,
+#   year_price: 780,
+#   page: 168,
+#   copy: 1,
+#   description: ''
+# }])
 
 # unless User.exists?(email: 'admin@example.com')
 #   User.create!(email: 'admin@example.com',
@@ -418,12 +556,12 @@ Magazine.create!([{
 #           56个民族儿女寄语十九大
 #           电力供应足?农村发展好
 #           进军营，包饺子
-#           全国妇联十一届七次执委会议在京召开
+#           全国妇联十一���七次执委会议在京召开
 #           一批涉儿童色情信息案件被严查
 #           思政课更活，获得感更多
 #           深化对中国特色社会主义政治经济学的研究
 #           加快制造业服务化转型
-#           大就要有大的样子
+#           大就要有大���样子
 #           关于我国经济高质量发展的几点认识
 #           钟扬的“种子精神”
 #           心有敬畏 行有所止
@@ -463,7 +601,7 @@ Magazine.create!([{
 #           俞正声与加蓬参议长米勒布举行会谈
 #           习近平主席新年贺词
 #           做一颗扎根大地的种子
-#           铭记光辉历史?不忘初心使命
+#           铭记���辉历史?不忘初心使命
 #           艺术的归途在时代生活
 #           中国电影需要更多冷峻影评家
 #           瀚海之谊，由来已久
@@ -564,13 +702,13 @@ Magazine.create!([{
 #           推动公共图书馆事业在法治轨道上取得新进展
 #           美财长有意访华，中方表��欢迎
 #           美国持续施压或使日本软化贸易立场
-#           美施压踢走华为澳出资建海底光缆
+#           美施压踢走华为澳出资���海底光缆
 #           美财长有意访华，中方表示欢迎
 #           美财长拟访中，解贸易难题
 #           中方欢迎美财长来����商中美贸易对话大门微微开启
 #           在美施压下调整策略传日不排斥FTA
 #           中美贸易摩擦欧盟称中立
-#           杨苏棣证实，���陆战队将进驻AIT内湖新馆]
+#           杨苏棣证实，���陆战队将进驻AIT内湖新���]
 # tags = %w[测试 任务 工作 学习 生活 人物]
 # status = %w[available lend]
 # level = %w[open internal sensitive secret classified]

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_023611) do
+ActiveRecord::Schema.define(version: 2018_12_19_085037) do
 
   create_table "attachments", force: :cascade do |t|
     t.string "file"
@@ -156,6 +156,20 @@ ActiveRecord::Schema.define(version: 2018_12_18_023611) do
     t.index ["tag_id", "doc_id"], name: "index_docs_tags_on_tag_id_and_doc_id"
   end
 
+  create_table "issues", force: :cascade do |t|
+    t.integer "magazine_id"
+    t.integer "year"
+    t.integer "issue_num"
+    t.string "barcode"
+    t.string "shelf_class"
+    t.string "shelf_num"
+    t.string "status", default: "在馆"
+    t.text "details"
+    t.string "cover"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.integer "doc_id"
     t.string "owner"
@@ -216,7 +230,7 @@ ActiveRecord::Schema.define(version: 2018_12_18_023611) do
     t.boolean "subscribe", default: true
     t.integer "copy", default: 1
     t.string "image"
-    t.string "description"
+    t.text "description"
     t.string "status"
     t.string "status_remark"
     t.datetime "created_at", null: false
