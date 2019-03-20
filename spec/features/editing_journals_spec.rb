@@ -12,7 +12,7 @@ RSpec.feature 'Users can edit existing journals' do
     # login_as(FactoryBot.create(:user, :admin))
     login_as(user)
     assign_role!(user, :manager, journal)
-    visit '/'
+    visit journals_path
     click_link '世界知识年鉴'
     click_link '编辑刊物'
   end

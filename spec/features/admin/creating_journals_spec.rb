@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.feature 'User can create new journals' do
   before do
     login_as(FactoryBot.create(:user, :admin))
-    visit '/'
+    visit journals_path
     click_link '新增刊物'
   end
 

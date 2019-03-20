@@ -22,7 +22,7 @@ RSpec.feature 'Users can view docs' do
                             origin: '20161021')
 
     login_as(editor)
-    visit '/'
+    visit journals_path
   end
   scenario 'for a given journal' do
     click_link '乌镇戏剧节'

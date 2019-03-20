@@ -8,7 +8,7 @@ RSpec.feature 'Users can only see the appropriate links' do
 
   context 'anonymous users' do
     scenario 'cannot see the New Journal link' do
-      visit '/'
+      visit journals_path
       expect(page).not_to have_link '新增刊物'
     end
   end
@@ -20,7 +20,7 @@ RSpec.feature 'Users can only see the appropriate links' do
     end
 
     scenario 'cannot see the New Journal link' do
-      visit '/'
+      visit '/journals'
       expect(page).not_to have_link '新增刊物'
     end
 
@@ -59,7 +59,7 @@ RSpec.feature 'Users can only see the appropriate links' do
     before { login_as(admin) }
 
     scenario 'can see the New Journal link' do
-      visit '/'
+      visit journals_path
       expect(page).to have_link '新增刊物'
     end
 
