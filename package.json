@@ -2,7 +2,7 @@
   "name": "bookmgmt",
   "private": true,
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "bxslider": "^4.2.11",
     "jquery-form-validator": "^2.3.74",
     "moment": "^2.18.1",
