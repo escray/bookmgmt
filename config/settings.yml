@@ -1,0 +1,40 @@
+search:
+  autocomplete:
+    limit: 10
+admin:
+  users:
+    index:
+      users_per_page: 6
+  author:
+    per_page: 15
+  categories:
+    index:
+      categories_per_page: 6
+  book:
+    book_limit: 9
+explorer:
+  categories:
+    limit: 18
+  tags:
+    limit: 50
+categories:
+  category:
+    limit: 9
+truncate:
+  book:
+    title: 45
+    desc: 30
+blog:
+  dashboard:
+    limit: 10
+user:
+  home:
+    new_book: 10
+    popular_book: 10
+    recent_blog: 10
+    top_author: 10
+    top_rate_book: 10
+    truncate:
+      item_book_title: 40
+      book_description: 550
+      author_description: 250

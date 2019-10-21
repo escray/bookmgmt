@@ -1,0 +1,10 @@
+en:
+  categories:
+    show:
+      category: "Category "
+      collection: "Collection"
+      created_at: "Latest"
+      title: "Book Title"
+      public_date: "Public Date"
+    index:
+      all_categories: "Explorer All Categories"

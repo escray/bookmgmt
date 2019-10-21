@@ -1,0 +1,15 @@
+/*
+ *= require app_imports
+ *= require bootstrap/dist/css/bootstrap.min
+ *= require propellerkit/dist/css/propeller.min
+ *= require propellerkit/components/datetimepicker/css/bootstrap-datetimepicker
+ *= require propellerkit/components/datetimepicker/css/pmd-datetimepicker
+ *= require owl.carousel/dist/assets/owl.carousel.min
+ *= require bxslider/dist/jquery.bxslider
+ *= require font-awesome
+ *= require simplemde/dist/simplemde.min
+ *= require select2/dist/css/select2.min
+ *= require select2-bootstrap-theme/dist/select2-bootstrap.min
+ *= require propellerkit/components/select2/css/pmd-select2
+ *= require_tree ./users
+*/

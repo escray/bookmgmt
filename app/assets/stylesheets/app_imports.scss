@@ -5,10 +5,6 @@
 @import "select2-bootstrap";
 @import "font-awesome";
 @import "jquery-ui";
-@import "journals";
-@import "docs";
-@import "admin/application";
-@import "admin/users.scss";
 @import "responsive";
 
 header {
@@ -94,8 +90,6 @@ body {
     max-width: 55%;
   }
 }
-
-ul.actions {}
 
 #docs li, #states li {
   padding-bottom: 10px;
