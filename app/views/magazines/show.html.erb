@@ -1,0 +1,31 @@
+<% provide :title, @magazine.title %>
+  <div class="container-fluid header-block">
+    <h2><%= t("magazines.show.magazine") %></h2>
+    <h1 class="text-capitalize"><%= @magazine.title %></h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <%= render "magazines/sidebar", magazines: @magazines %>
+      </div>
+      <div class="col-sm-9 tab-style-1-content">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="row category-header"></div>
+          </div>
+
+        </div>
+        <div class="row">
+          <% @issues.each do |issue| %>
+            <%= render "magazines/issue", issue: issue %>
+          <% end %>
+        </div>
+        <div class="row">
+          <div class="col-sm-9">
+            <hr>
+            <%= paginate @issues %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

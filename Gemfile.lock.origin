@@ -1,69 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-<<<<<<< HEAD
-=======
     CFPropertyList (2.3.6)
-<<<<<<< HEAD
->>>>>>> parent of 031f2a6... Revert "temp"
-    aasm (5.0.6)
-      concurrent-ruby (~> 1.0)
-    actioncable (6.0.0)
-      actionpack (= 6.0.0)
-      nio4r (~> 2.0)
-      websocket-driver (>= 0.6.1)
-    actionmailbox (6.0.0)
-      actionpack (= 6.0.0)
-      activejob (= 6.0.0)
-      activerecord (= 6.0.0)
-      activestorage (= 6.0.0)
-      activesupport (= 6.0.0)
-      mail (>= 2.7.1)
-    actionmailer (6.0.0)
-      actionpack (= 6.0.0)
-      actionview (= 6.0.0)
-      activejob (= 6.0.0)
-      mail (~> 2.5, >= 2.5.4)
-      rails-dom-testing (~> 2.0)
-    actionpack (6.0.0)
-      actionview (= 6.0.0)
-      activesupport (= 6.0.0)
-      rack (~> 2.0)
-      rack-test (>= 0.6.3)
-      rails-dom-testing (~> 2.0)
-      rails-html-sanitizer (~> 1.0, >= 1.2.0)
-    actiontext (6.0.0)
-      actionpack (= 6.0.0)
-      activerecord (= 6.0.0)
-      activestorage (= 6.0.0)
-      activesupport (= 6.0.0)
-      nokogiri (>= 1.8.5)
-    actionview (6.0.0)
-      activesupport (= 6.0.0)
-      builder (~> 3.1)
-      erubi (~> 1.4)
-      rails-dom-testing (~> 2.0)
-      rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    active_model_serializers (0.10.10)
-      actionpack (>= 4.1, < 6.1)
-      activemodel (>= 4.1, < 6.1)
-      case_transform (>= 0.2)
-      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
-    activejob (6.0.0)
-      activesupport (= 6.0.0)
-      globalid (>= 0.3.6)
-    activemodel (6.0.0)
-      activesupport (= 6.0.0)
-    activerecord (6.0.0)
-      activemodel (= 6.0.0)
-      activesupport (= 6.0.0)
-    activestorage (6.0.0)
-      actionpack (= 6.0.0)
-      activejob (= 6.0.0)
-      activerecord (= 6.0.0)
-      marcel (~> 0.3.1)
-    activesupport (6.0.0)
-=======
     aasm (5.0.2)
       concurrent-ruby (~> 1.0)
     actioncable (5.2.2.1)
@@ -108,51 +46,24 @@ GEM
       activerecord (= 5.2.2.1)
       marcel (~> 0.3.1)
     activesupport (5.2.2.1)
->>>>>>> list
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-<<<<<<< HEAD
-      zeitwerk (~> 2.1, >= 2.1.8)
-    addressable (2.7.0)
-      public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (9.6.5)
-=======
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     autoprefixer-rails (9.5.0)
->>>>>>> list
       execjs
     axlsx (1.3.6)
       htmlentities (~> 4.3.1)
       nokogiri (>= 1.4.1)
-<<<<<<< HEAD
-<<<<<<< HEAD
-      rubyzip (>= 0.9.5)
-    axlsx_rails (0.6.0)
-      actionpack (>= 3.1)
-      caxlsx (>= 3.0)
-=======
-      rubyzip (~> 1.0.0)
-    axlsx_rails (0.5.1)
-      actionpack (>= 3.1)
-      axlsx (>= 2.0.1)
->>>>>>> parent of 031f2a6... Revert "temp"
-    bcrypt (3.1.13)
-    bindex (0.8.1)
-=======
       rubyzip (>= 0.9.5)
     axlsx_rails (0.1.5)
       axlsx
       rails (>= 3.1)
     bcrypt (3.1.12)
-    bcrypt (3.1.12-java)
-    bcrypt (3.1.12-x64-mingw32)
-    bcrypt (3.1.12-x86-mingw32)
     bindex (0.5.0)
->>>>>>> list
     bootstrap-datepicker-rails (1.8.0.1)
       railties (>= 3.0)
     bootstrap-sass (3.4.1)
@@ -162,112 +73,59 @@ GEM
       railties (>= 3.1)
     builder (3.2.3)
     byebug (11.0.1)
-<<<<<<< HEAD
-    capybara (3.29.0)
-=======
     capybara (3.15.0)
->>>>>>> list
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
-      regexp_parser (~> 1.5)
+      regexp_parser (~> 1.2)
       xpath (~> 3.2)
-<<<<<<< HEAD
-    carrierwave (2.0.2)
-      activemodel (>= 5.0.0)
-      activesupport (>= 5.0.0)
-      addressable (~> 2.6)
-      image_processing (~> 1.1)
-      mimemagic (>= 0.3.0)
-      mini_mime (>= 0.1.3)
-=======
     carrierwave (1.3.1)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
->>>>>>> list
     case_transform (0.2)
       activesupport
-    caxlsx (3.0.1)
-      htmlentities (~> 4.3, >= 4.3.4)
-      mimemagic (~> 0.3)
-      nokogiri (~> 1.10, >= 1.10.4)
-      rubyzip (>= 1.3.0, < 3)
     chart-js-rails (0.1.6)
       railties (> 3.1)
-<<<<<<< HEAD
-    childprocess (3.0.0)
-    ckeditor (5.0.0)
-      orm_adapter (~> 0.5.0)
-    coffee-rails (5.0.0)
-=======
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
-<<<<<<< HEAD
-    ckeditor (5.0.0)
-      orm_adapter (~> 0.5.0)
-=======
     ckeditor (4.3.0)
       orm_adapter (~> 0.5.0)
       terrapin
     climate_control (0.2.0)
->>>>>>> list
     coffee-rails (4.2.2)
->>>>>>> parent of 031f2a6... Revert "temp"
       coffee-script (>= 2.2.0)
-      railties (>= 5.2.0)
+      railties (>= 4.0.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
-<<<<<<< HEAD
-    connection_pool (2.2.2)
-    crass (1.0.5)
-=======
     config (1.7.1)
       activesupport (>= 3.0)
       deep_merge (~> 1.2.1)
       dry-validation (>= 0.12.2)
     connection_pool (2.2.2)
     crass (1.0.4)
->>>>>>> list
     css_parser (1.7.0)
       addressable
     database_cleaner (1.7.0)
-<<<<<<< HEAD
-=======
     declarative (0.0.10)
     declarative-option (0.1.0)
-<<<<<<< HEAD
->>>>>>> parent of 031f2a6... Revert "temp"
-    devise (4.7.1)
-=======
     deep_merge (1.2.1)
     devise (4.6.1)
->>>>>>> list
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
+      railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-<<<<<<< HEAD
-    devise-i18n (1.8.2)
-=======
     devise-i18n (1.8.0)
->>>>>>> list
       devise (>= 4.6)
     diff-lcs (1.3)
-<<<<<<< HEAD
-=======
-    domain_name (0.5.20190701)
+    domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-<<<<<<< HEAD
-    dry-inflector (0.2.0)
->>>>>>> parent of 031f2a6... Revert "temp"
-=======
     dry-configurable (0.8.2)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.4, >= 0.4.7)
@@ -296,34 +154,10 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.5, >= 0.5.0)
       dry-types (~> 0.14, >= 0.14)
->>>>>>> list
     email_spec (2.2.0)
       htmlentities (~> 4.3.3)
       launchy (~> 2.1)
       mail (~> 2.7)
-<<<<<<< HEAD
-    erubi (1.9.0)
-<<<<<<< HEAD
-=======
-    excon (0.67.0)
->>>>>>> parent of 031f2a6... Revert "temp"
-    execjs (2.7.0)
-    factory_bot (5.1.1)
-      activesupport (>= 4.2.0)
-    factory_bot_rails (5.1.1)
-      factory_bot (~> 5.1.0)
-      railties (>= 4.2.0)
-    faker (2.6.0)
-      i18n (>= 1.6, < 1.8)
-<<<<<<< HEAD
-    ffi (1.11.1)
-    font-awesome-rails (4.7.0.5)
-      railties (>= 3.2, < 6.1)
-=======
-    faraday (0.17.0)
-      multipart-post (>= 1.2, < 3)
-    ffi (1.11.1)
-=======
     erubi (1.8.0)
     excon (0.62.0)
     execjs (2.7.0)
@@ -337,26 +171,22 @@ GEM
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.10.0)
-    ffi (1.10.0-java)
-    ffi (1.10.0-x64-mingw32)
-    ffi (1.10.0-x86-mingw32)
->>>>>>> list
     fission (0.5.0)
       CFPropertyList (~> 2.2)
-    fog (2.2.0)
+    fog (2.1.0)
       fog-aliyun (>= 0.1.0)
       fog-atmos
       fog-aws (>= 0.6.0)
       fog-brightbox (~> 0.4)
-      fog-cloudatcost (~> 0.4)
-      fog-cloudstack (~> 0.1.0)
-      fog-core (~> 2.1)
+      fog-cloudatcost (~> 0.1.0)
+      fog-core (~> 1.45)
       fog-digitalocean (>= 0.3.0)
-      fog-dnsimple (~> 2.1)
+      fog-dnsimple (~> 1.0)
       fog-dynect (~> 0.0.2)
       fog-ecloud (~> 0.1)
       fog-google (~> 1.0)
       fog-internet-archive
+      fog-joyent
       fog-json
       fog-local
       fog-openstack
@@ -378,11 +208,7 @@ GEM
       fog-xml (~> 0.1.1)
       ipaddress (~> 0.5)
       json (~> 2.0)
-<<<<<<< HEAD
-    fog-aliyun (0.3.5)
-=======
     fog-aliyun (0.3.3)
->>>>>>> list
       fog-core
       fog-json
       ipaddress (~> 0.8)
@@ -390,9 +216,9 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (3.5.2)
-      fog-core (~> 2.1)
-      fog-json (~> 1.1)
+    fog-aws (2.0.1)
+      fog-core (~> 1.38)
+      fog-json (~> 1.0)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
     fog-brightbox (0.16.1)
@@ -400,27 +226,23 @@ GEM
       fog-core
       fog-json
       mime-types
-    fog-cloudatcost (0.4.0)
-      fog-core
-      fog-json
-      ipaddress
-    fog-cloudstack (0.1.0)
-      fog-core (~> 2.1)
-      fog-json (~> 1.1)
+    fog-cloudatcost (0.1.2)
+      fog-core (~> 1.36)
+      fog-json (~> 1.0)
       fog-xml (~> 0.1)
-    fog-core (2.1.0)
+      ipaddress (~> 0.8)
+    fog-core (1.45.0)
       builder
       excon (~> 0.58)
       formatador (~> 0.2)
-      mime-types
     fog-digitalocean (0.4.0)
       fog-core
       fog-json
       fog-xml
       ipaddress (>= 0.5)
-    fog-dnsimple (2.1.0)
-      fog-core (>= 1.38, < 3)
-      fog-json
+    fog-dnsimple (1.0.0)
+      fog-core (~> 1.38)
+      fog-json (~> 1.0)
     fog-dynect (0.0.3)
       fog-core
       fog-json
@@ -428,11 +250,7 @@ GEM
     fog-ecloud (0.3.0)
       fog-core
       fog-xml
-<<<<<<< HEAD
-    fog-google (1.9.1)
-=======
     fog-google (1.8.2)
->>>>>>> list
       fog-core (<= 2.1.0)
       fog-json (~> 1.2)
       fog-xml (~> 0.1.0)
@@ -441,24 +259,19 @@ GEM
       fog-core
       fog-json
       fog-xml
+    fog-joyent (0.0.1)
+      fog-core (~> 1.42)
+      fog-json (>= 1.0)
     fog-json (1.2.0)
       fog-core
       multi_json (~> 1.10)
     fog-local (0.6.0)
       fog-core (>= 1.27, < 3.0)
-<<<<<<< HEAD
-    fog-openstack (1.0.10)
-      fog-core (~> 2.1)
-      fog-json (>= 1.0)
-      ipaddress (>= 0.8)
-    fog-ovirt (1.2.1)
-=======
     fog-openstack (0.3.10)
       fog-core (>= 1.45, <= 2.1.0)
       fog-json (>= 1.0)
       ipaddress (>= 0.8)
     fog-ovirt (1.1.6)
->>>>>>> list
       fog-core
       fog-json
       fog-xml
@@ -468,10 +281,9 @@ GEM
       fog-core
       fog-json
       fog-xml
-    fog-profitbricks (0.0.5)
-      fog-core
-      fog-xml
-      nokogiri
+    fog-profitbricks (4.1.1)
+      fog-core (~> 1.42)
+      fog-json (~> 1.0)
     fog-rackspace (0.1.6)
       fog-core (>= 1.35)
       fog-json (>= 1.0)
@@ -506,9 +318,9 @@ GEM
     fog-voxel (0.1.0)
       fog-core
       fog-xml
-    fog-vsphere (3.2.1)
+    fog-vsphere (2.5.0)
       fog-core
-      rbvmomi (>= 1.9, < 3)
+      rbvmomi (~> 1.9)
     fog-xenserver (1.0.0)
       fog-core
       fog-xml
@@ -516,58 +328,45 @@ GEM
     fog-xml (0.1.3)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
-    font-awesome-rails (4.7.0.5)
-      railties (>= 3.2, < 6.1)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     formatador (0.2.5)
-<<<<<<< HEAD
->>>>>>> parent of 031f2a6... Revert "temp"
-=======
->>>>>>> list
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    google-api-client (0.23.9)
+      addressable (~> 2.5, >= 2.5.1)
+      googleauth (>= 0.5, < 0.7.0)
+      httpclient (>= 2.8.1, < 3.0)
+      mime-types (~> 3.0)
+      representable (~> 3.0)
+      retriable (>= 2.0, < 4.0)
+      signet (~> 0.9)
+    googleauth (0.6.7)
+      faraday (~> 0.12)
+      jwt (>= 1.4, < 3.0)
+      memoist (~> 0.16)
+      multi_json (~> 1.11)
+      os (>= 0.9, < 2.0)
+      signet (~> 0.7)
     htmlentities (4.3.4)
-<<<<<<< HEAD
-=======
-    http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httpclient (2.8.3)
-<<<<<<< HEAD
->>>>>>> parent of 031f2a6... Revert "temp"
-    i18n (1.7.0)
-=======
     i18n (1.6.0)
->>>>>>> list
       concurrent-ruby (~> 1.0)
-    image_processing (1.9.3)
-      mini_magick (>= 4.9.5, < 5)
-      ruby-vips (>= 2.0.13, < 3)
-<<<<<<< HEAD
-=======
     ipaddress (0.8.3)
->>>>>>> parent of 031f2a6... Revert "temp"
-    jbuilder (2.9.1)
+    jbuilder (2.8.0)
       activesupport (>= 4.2.0)
-    jquery-rails (4.3.5)
+      multi_json (>= 1.2)
+    jquery-rails (4.3.3)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    jsonapi-renderer (0.2.2)
-=======
     json (2.2.0)
-    jsonapi-renderer (0.2.2)
-    jwt (2.2.1)
->>>>>>> parent of 031f2a6... Revert "temp"
-=======
-    json (2.2.0)
-    json (2.2.0-java)
     jsonapi-renderer (0.2.0)
     jwt (2.1.0)
->>>>>>> list
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -582,18 +381,12 @@ GEM
     kaminari-core (1.1.1)
     launchy (2.4.3)
       addressable (~> 2.3)
-<<<<<<< HEAD
-=======
-    launchy (2.4.3-java)
-      addressable (~> 2.3)
-      spoon (~> 0.0.1)
->>>>>>> list
     letter_opener (1.7.0)
       launchy (~> 2.2)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    loofah (2.3.0)
+    loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -604,25 +397,10 @@ GEM
       railties
     material_icons (2.2.1)
       railties (>= 3.2)
+    memoist (0.16.0)
     method_source (0.9.2)
-<<<<<<< HEAD
-=======
-    mime-types (3.3)
+    mime-types (3.2.2)
       mime-types-data (~> 3.2015)
-<<<<<<< HEAD
-    mime-types-data (3.2019.1009)
->>>>>>> parent of 031f2a6... Revert "temp"
-    mimemagic (0.3.3)
-    mini_magick (4.9.5)
-    mini_mime (1.0.2)
-    mini_portile2 (2.4.0)
-    minitest (5.12.2)
-<<<<<<< HEAD
-=======
-    multi_json (1.14.1)
-    multipart-post (2.1.1)
->>>>>>> parent of 031f2a6... Revert "temp"
-=======
     mime-types-data (3.2018.0812)
     mimemagic (0.3.3)
     mini_magick (4.9.3)
@@ -631,50 +409,15 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     multipart-post (2.0.0)
->>>>>>> list
     mustermann (1.0.3)
     nested_form_fields (0.8.2)
       coffee-rails (>= 3.2.1)
       jquery-rails
       rails (>= 3.2.0)
     net-ssh (5.2.0)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    nio4r (2.5.2)
-    nokogiri (1.10.4)
-      mini_portile2 (~> 2.4.0)
-    orm_adapter (0.5.0)
-    paper_trail (10.3.1)
-      activerecord (>= 4.2)
-      request_store (~> 1.1)
-    paper_trail-association_tracking (2.0.0)
-=======
-    netrc (0.11.0)
-    nio4r (2.5.2)
-    nokogiri (1.10.4)
-      mini_portile2 (~> 2.4.0)
-    optimist (3.0.0)
-    orm_adapter (0.5.0)
-    os (1.0.1)
-    ovirt-engine-sdk (4.3.0)
-      json (>= 1, < 3)
-    paper_trail (10.3.1)
-      activerecord (>= 4.2)
-      request_store (~> 1.1)
->>>>>>> parent of 031f2a6... Revert "temp"
-    pg (1.1.4)
-    polyamorous (2.3.0)
-      activerecord (>= 5.0)
-=======
     netrc (0.11.0)
     nio4r (2.3.1)
-    nio4r (2.3.1-java)
     nokogiri (1.10.1)
-      mini_portile2 (~> 2.4.0)
-    nokogiri (1.10.1-java)
-    nokogiri (1.10.1-x64-mingw32)
-      mini_portile2 (~> 2.4.0)
-    nokogiri (1.10.1-x86-mingw32)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     os (1.0.0)
@@ -684,45 +427,15 @@ GEM
       activerecord (>= 4.2, < 6.1)
       request_store (~> 1.1)
     paper_trail-association_tracking (2.0.0)
-    pg (1.1.4)
-    pg (1.1.4-x64-mingw32)
-    pg (1.1.4-x86-mingw32)
->>>>>>> list
     premailer (1.11.1)
       addressable
       css_parser (>= 1.6.0)
       htmlentities (>= 4.0.0)
-    premailer-rails (1.10.3)
-      actionmailer (>= 3)
+    premailer-rails (1.10.2)
+      actionmailer (>= 3, < 6)
       premailer (~> 1.7, >= 1.7.9)
-<<<<<<< HEAD
-    public_suffix (4.0.1)
-    puma (3.12.1)
-    pundit (2.1.0)
-      activesupport (>= 3.0.0)
-    rack (2.0.7)
-    rack-protection (2.0.7)
-      rack
-    rack-test (1.1.0)
-      rack (>= 1.0, < 3)
-    rails (6.0.0)
-      actioncable (= 6.0.0)
-      actionmailbox (= 6.0.0)
-      actionmailer (= 6.0.0)
-      actionpack (= 6.0.0)
-      actiontext (= 6.0.0)
-      actionview (= 6.0.0)
-      activejob (= 6.0.0)
-      activemodel (= 6.0.0)
-      activerecord (= 6.0.0)
-      activestorage (= 6.0.0)
-      activesupport (= 6.0.0)
-      bundler (>= 1.3.0)
-      railties (= 6.0.0)
-=======
     public_suffix (3.0.3)
     puma (3.12.1)
-    puma (3.12.1-java)
     pundit (2.0.1)
       activesupport (>= 3.0.0)
     rack (2.0.6)
@@ -742,39 +455,20 @@ GEM
       activesupport (= 5.2.2.1)
       bundler (>= 1.3.0)
       railties (= 5.2.2.1)
->>>>>>> list
       sprockets-rails (>= 2.0.0)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-<<<<<<< HEAD
-    rails-html-sanitizer (1.3.0)
-      loofah (~> 2.3)
-    rails-i18n (6.0.0)
-=======
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
     rails-i18n (5.1.3)
->>>>>>> list
       i18n (>= 0.7, < 2)
-      railties (>= 6.0.0, < 7)
+      railties (>= 5.0, < 6)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
     rails_serve_static_assets (0.0.5)
     rails_stdout_logging (0.0.5)
-<<<<<<< HEAD
-    railties (6.0.0)
-      actionpack (= 6.0.0)
-      activesupport (= 6.0.0)
-      method_source
-      rake (>= 0.8.7)
-      thor (>= 0.20.3, < 2.0)
-    rake (13.0.0)
-    ranked-model (0.4.4)
-      activerecord (>= 4.1.16)
-    ransack (2.3.0)
-=======
     railties (5.2.2.1)
       actionpack (= 5.2.2.1)
       activesupport (= 5.2.2.1)
@@ -785,109 +479,45 @@ GEM
     ranked-model (0.4.3)
       activerecord (>= 4.1.16)
     ransack (2.1.1)
->>>>>>> list
       actionpack (>= 5.0)
       activerecord (>= 5.0)
       activesupport (>= 5.0)
       i18n
-      polyamorous (= 2.3.0)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    rdoc (6.2.0)
-    redis (4.1.3)
-    regexp_parser (1.6.0)
-=======
-=======
->>>>>>> list
     rbovirt (0.1.7)
       nokogiri
       rest-client (> 1.7.0)
-    rbvmomi (2.2.0)
+    rbvmomi (1.13.0)
       builder (~> 3.0)
       json (>= 1.8)
       nokogiri (~> 1.5)
-<<<<<<< HEAD
-      optimist (~> 3.0)
-    rdoc (6.2.0)
-    redis (4.1.3)
-    regexp_parser (1.6.0)
-=======
       trollop (~> 2.1)
     rdoc (6.1.1)
     redis (4.1.0)
     regexp_parser (1.3.0)
->>>>>>> list
     representable (3.0.4)
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
       uber (< 0.2.0)
->>>>>>> parent of 031f2a6... Revert "temp"
     request_store (1.4.1)
       rack (>= 1.4)
-<<<<<<< HEAD
-    responders (3.0.0)
-      actionpack (>= 5.0)
-      railties (>= 5.0)
-<<<<<<< HEAD
-=======
-    rest-client (2.1.0)
-      http-accept (>= 1.7.0, < 2.0)
-=======
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
     rest-client (2.0.2)
->>>>>>> list
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 4.0)
-      netrc (~> 0.8)
-    rest-client (2.0.2-x64-mingw32)
-      ffi (~> 1.9)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 4.0)
-      netrc (~> 0.8)
-    rest-client (2.0.2-x86-mingw32)
-      ffi (~> 1.9)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 4.0)
-      netrc (~> 0.8)
-    rest-client (2.0.2-x86-mswin32)
-      ffi (~> 1.9)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     retriable (3.1.2)
->>>>>>> parent of 031f2a6... Revert "temp"
-    rspec-core (3.9.0)
-      rspec-support (~> 3.9.0)
-    rspec-expectations (3.9.0)
+    rspec-core (3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-expectations (3.8.2)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.9.0)
-    rspec-mocks (3.9.0)
+      rspec-support (~> 3.8.0)
+    rspec-mocks (3.8.0)
       diff-lcs (>= 1.2.0, < 2.0)
-<<<<<<< HEAD
-      rspec-support (~> 3.9.0)
-    rspec-rails (3.9.0)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 3.9.0)
-      rspec-expectations (~> 3.9.0)
-      rspec-mocks (~> 3.9.0)
-      rspec-support (~> 3.9.0)
-    rspec-support (3.9.0)
-    ruby-vips (2.0.16)
-      ffi (~> 1.9)
-<<<<<<< HEAD
-    rubyzip (2.0.0)
-=======
-    rubyzip (1.0.0)
->>>>>>> parent of 031f2a6... Revert "temp"
-    sass (3.7.4)
-=======
       rspec-support (~> 3.8.0)
     rspec-rails (3.8.2)
       actionpack (>= 3.0)
@@ -900,48 +530,23 @@ GEM
     rspec-support (3.8.0)
     rubyzip (1.2.2)
     sass (3.7.3)
->>>>>>> list
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    sass-rails (5.1.0)
-      railties (>= 5.2.0)
+    sass-rails (5.0.7)
+      railties (>= 4.0.0, < 6)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-<<<<<<< HEAD
-    sassc (2.2.1)
-      ffi (~> 1.9)
-=======
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
->>>>>>> list
     sdoc (1.0.0)
       rdoc (>= 5.0)
     select2-rails (4.0.3)
       thor (~> 0.14)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    selenium-webdriver (3.142.6)
-      childprocess (>= 0.5, < 4.0)
-      rubyzip (>= 1.2.2)
-=======
-    selenium-webdriver (3.8.0)
-      childprocess (~> 0.5)
-      rubyzip (~> 1.0)
->>>>>>> parent of 031f2a6... Revert "temp"
-    sidekiq (6.0.2)
-      connection_pool (>= 2.2.2)
-      rack (>= 2.0.0)
-      rack-protection (>= 2.0.0)
-      redis (>= 4.1.0)
-<<<<<<< HEAD
-=======
-    signet (0.12.0)
-=======
     selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
@@ -951,23 +556,10 @@ GEM
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
     signet (0.11.0)
->>>>>>> list
       addressable (~> 2.3)
       faraday (~> 0.9)
       jwt (>= 1.5, < 3.0)
       multi_json (~> 1.10)
-<<<<<<< HEAD
->>>>>>> parent of 031f2a6... Revert "temp"
-    simple_form (5.0.1)
-      actionpack (>= 5.0)
-      activemodel (>= 5.0)
-    sinatra (2.0.7)
-      mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.7)
-      tilt (~> 2.0)
-    spring (2.1.0)
-=======
     simple_form (4.1.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -976,11 +568,8 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.5)
       tilt (~> 2.0)
-    spoon (0.0.6)
-      ffi
     spring (2.0.2)
       activesupport (>= 4.2)
->>>>>>> list
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -991,86 +580,43 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-<<<<<<< HEAD
-    sqlite3 (1.4.1)
-    thor (0.20.3)
-    thread_safe (0.3.6)
-    tilt (2.0.10)
-    turbolinks (5.2.1)
-=======
-    sqlite3 (1.3.13)
-    sqlite3 (1.3.13-x64-mingw32)
-    sqlite3 (1.3.13-x86-mingw32)
-    sqlite3 (1.3.13-x86-mswin32-60)
+    sqlite3 (1.4.0)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (0.20.3)
     thread_safe (0.3.6)
-    thread_safe (0.3.6-java)
     tilt (2.0.9)
     trollop (2.9.9)
     turbolinks (5.2.0)
->>>>>>> list
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
-=======
-=======
-    tzinfo-data (1.2018.9)
-      tzinfo (>= 1.0.0)
->>>>>>> list
     uber (0.1.0)
-    uglifier (4.2.0)
+    uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
-<<<<<<< HEAD
-    unf_ext (0.0.7.6)
->>>>>>> parent of 031f2a6... Revert "temp"
-=======
-    unf (0.1.4-java)
     unf_ext (0.0.7.5)
-    unf_ext (0.0.7.5-x64-mingw32)
-    unf_ext (0.0.7.5-x86-mingw32)
->>>>>>> list
     warden (1.2.8)
       rack (>= 2.0.6)
-    web-console (4.0.1)
-      actionview (>= 6.0.0)
-      activemodel (>= 6.0.0)
+    web-console (3.7.0)
+      actionview (>= 5.0)
+      activemodel (>= 5.0)
       bindex (>= 0.4.0)
-      railties (>= 6.0.0)
-    websocket-driver (0.7.1)
-      websocket-extensions (>= 0.1.0)
-<<<<<<< HEAD
-    websocket-extensions (0.1.4)
-<<<<<<< HEAD
-=======
-=======
-    websocket-driver (0.7.0-java)
+      railties (>= 5.0)
+    websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
->>>>>>> list
     xml-simple (1.1.5)
->>>>>>> parent of 031f2a6... Revert "temp"
     xmlrpc (0.3.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.2.0)
     zip-zip (0.3)
       rubyzip (>= 1.0.0)
 
 PLATFORMS
-  java
   ruby
-  x64-mingw32
-  x86-mingw32
-  x86-mswin32
 
 DEPENDENCIES
   aasm
@@ -1085,18 +631,15 @@ DEPENDENCIES
   carrierwave
   chart-js-rails
   ckeditor
-<<<<<<< HEAD
-  coffee-rails
-=======
   coffee-rails (~> 4.2)
   config
->>>>>>> list
   database_cleaner
   devise
   devise-i18n
   email_spec
   factory_bot_rails
   faker
+  fog
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -1111,11 +654,10 @@ DEPENDENCIES
   net-ssh
   paper_trail
   paper_trail-association_tracking
-  pg
   premailer-rails
   puma (~> 3.0)
   pundit
-  rails (= 6.0.0)
+  rails
   rails-i18n
   rails_12factor
   ranked-model
@@ -1130,7 +672,7 @@ DEPENDENCIES
   sinatra
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.3, < 1.4)
+  sqlite3
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
@@ -1139,12 +681,4 @@ DEPENDENCIES
   zip-zip
 
 BUNDLED WITH
-<<<<<<< HEAD
-<<<<<<< HEAD
-   2.0.2
-=======
    1.17.2
->>>>>>> parent of 031f2a6... Revert "temp"
-=======
-   2.0.1
->>>>>>> list

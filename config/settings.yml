@@ -1,6 +1,9 @@
 search:
   autocomplete:
     limit: 10
+magazines:
+  issue:
+    limit: 9
 admin:
   users:
     index:
@@ -24,6 +27,9 @@ truncate:
   book:
     title: 45
     desc: 30
+  magazine:
+    title: 45
+    desc: 60
 blog:
   dashboard:
     limit: 10

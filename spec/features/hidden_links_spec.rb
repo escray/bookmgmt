@@ -61,7 +61,11 @@ RSpec.feature 'Users can only see the appropriate links' do
     before { login_as(admin) }
 
     scenario 'can see the New Journal link' do
+<<<<<<< HEAD
       visit '/journals'
+=======
+      visit journals_path
+>>>>>>> list
       expect(page).to have_link '新增刊物'
     end
 

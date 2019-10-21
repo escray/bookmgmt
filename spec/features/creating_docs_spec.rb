@@ -14,6 +14,7 @@ RSpec.feature 'Users can create new doc' do
                                 publisher: '世界知识年鉴出版社')
     assign_role!(user, :manager, journal)
     visit journal_path(journal)
+    # visit '\journals'
     click_link '新增资料'
   end
 

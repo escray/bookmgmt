@@ -1,0 +1,22 @@
+<% provide :title, t("magazines.index") %>
+
+  <!-- <header> <h3>杂志列表</h3> </header> -->
+  <div class="container-fluid header-block">
+    <h1 class="text-capitalize">
+      <%= t("magazines.index") %>
+    </h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <%= render "magazines/sidebar", magazines: @magazines %>
+      </div>
+      <div class="col-sm-9 tab-style-1-content">
+        <div class="row">
+          <% @magazines.each do |mag| %>
+            <%= render "mag", mag: mag %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

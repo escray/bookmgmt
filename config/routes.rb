@@ -34,7 +34,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :pubs
+    resources :magazines
 
     resources :csv_imports
     resources :csv_exports
@@ -105,7 +105,7 @@ Rails.application.routes.draw do
 
   resources :cart_items
 
-  resources :pubs, only: %i[index show]
+  resources :magazines, only: %i[index show]
 
   resources :attachments, only: %i[show new]
 
