@@ -2,7 +2,6 @@
 
 require 'rails_helper'
 
-<<<<<<< HEAD
 RSpec.feature 'Users can delete unwanted tags from a doc' do
   let(:user) { FactoryBot.create(:user) }
   let(:journal) { FactoryBot.create(:journal) }
@@ -24,7 +23,6 @@ RSpec.feature 'Users can delete unwanted tags from a doc' do
   #   expect(page).to_not have_content 'ThisTagMustDie'
   # end
 end
-=======
 # TODO:  'Capybara::ElementNotFound'
 
 # RSpec.feature 'Users can delete unwanted tags from a doc' do
@@ -49,4 +47,3 @@ end
 #     expect(page).to_not have_content 'ThisTagMustDie'
 #   end
 # end
->>>>>>> list
