@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -23,6 +25,6 @@ module Filemgmt
                               ymd: '%Y-%m-%d',
                               full: '%Y/%m/%d %I:%M %p')
 
-    Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+    # Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
   end
 end

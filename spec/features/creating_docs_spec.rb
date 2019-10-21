@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.feature 'Users can create new doc' do
   let(:user) { FactoryBot.create(:user) }
@@ -64,6 +66,7 @@ RSpec.feature 'Users can create new doc' do
     end
   end
 
+  # Capybara starting Puma...
   scenario 'with multipule attachments', js: true do
     fill_in '资料标题', with: '沟上说以色列或将凭借海基核威慑力成为全球军事超级大国'
     fill_in '原始编号', with: '201701'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -17,7 +19,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -48,7 +50,7 @@ gem 'bootstrap-tagsinput-rails'
 gem 'carrierwave'
 gem 'ckeditor'
 gem 'devise'
-gem 'fog'
+# gem 'fog'
 gem 'font-awesome-rails'
 gem 'masonry-rails'
 gem 'material_icons'
@@ -73,7 +75,6 @@ gem 'axlsx_rails'
 
 gem 'zip-zip'
 # gem 'rubyzip', '~> 0.9.9'
-
 
 # paginate
 gem 'kaminari'
