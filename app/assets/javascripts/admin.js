@@ -9,5 +9,4 @@
 //= require select2
 //= require validator.min
 //= require nested_form_fields
-//= require ckeditor/init
 //= require_tree .
