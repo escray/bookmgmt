@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'User can delete journals' do
@@ -7,7 +9,7 @@ RSpec.feature 'User can delete journals' do
 
   scenario 'successfully' do
     FactoryBot.create(:journal, name: '世界知识年鉴', publisher: '世界知识年鉴出版社')
-    visit '/'
+    visit '/journals'
     click_link '世界知识年鉴'
     click_link '删除刊物'
 

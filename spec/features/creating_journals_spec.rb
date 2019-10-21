@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.feature 'User can create new journals' do
   before do
     login_as(FactoryBot.create(:user, :admin))
-    visit '/'
+    visit '/journals'
     click_link '新增刊物'
   end
 
@@ -27,6 +29,6 @@ RSpec.feature 'User can create new journals' do
   scenario 'when providing invalid attributes' do
     click_button '创建刊物'
     expect(page).to have_content '刊物创建未成功'
-    expect(page).to have_content '刊物名称不能为空字符'
+    expect(page).to have_content '不能为空字符'
   end
 end

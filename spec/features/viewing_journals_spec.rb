@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'Users can view journals' do
@@ -15,14 +17,14 @@ RSpec.feature 'Users can view journals' do
   end
 
   scenario 'with the journal details' do
-    visit '/'
+    visit '/journals'
     click_link '世界知识年鉴'
     expect(page.current_url).to eq journal_url(journal)
   end
 
   scenario 'unless they do not have permission' do
     FactoryBot.create(:journal, name: 'Hidden')
-    visit '/'
+    visit '/journals'
     expect(page).not_to have_content 'Hidden'
   end
 end
