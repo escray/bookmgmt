@@ -5,7 +5,7 @@
     "bootstrap": "^3.3.7",
     "bxslider": "^4.2.11",
     "jquery-form-validator": "^2.3.74",
-    "moment": "^2.18.1",
+    "moment": "^2.29.4",
     "owl.carousel": "^2.2.0",
     "pdfjs-dist": "^1.8.579",
     "propellerkit": "^1.3.1",
